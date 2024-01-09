@@ -1,4 +1,4 @@
-{ config, lib, pkgs, dotfilesRoot, ... }:
+{ config, lib, pkgs, dotfilesRoot, self, ... }:
 
 let
   script = ''
