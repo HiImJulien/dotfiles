@@ -2,6 +2,16 @@
 
 This repository contains my preferred system and home configuration.
 
+## TODO
+- [ ] Finalize nVim configuration
+  - [ ] Properly setup autocompletion and snippets support.
+  - [ ] Properly setup nvim-tmux-navigator.
+  - [ ] (Optional) Setup plugins using home-manager for better compatibility with nixOS.
+- [ ] Create script `amaterasu`, which provides a global short-hand for syncing system and home config.
+- [ ] Finalize eww configuration
+- [ ] Update GDM to use other monitor as primary
+
+
 ## Known Issues
 
 - Chromium-based browsers such as Brave do not retain any sessions, after restarting the browser.
