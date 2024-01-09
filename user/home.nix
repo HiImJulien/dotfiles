@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, self, ... }:
 
 {
   home.username = "kirsch";
@@ -22,5 +22,7 @@
     ./apps/zsh.nix
 
     ./apps/nvim/nvim.nix
+
+    ./bin/amaterasu.nix
   ];
 }

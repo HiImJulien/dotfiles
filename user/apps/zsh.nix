@@ -3,7 +3,7 @@
 {
   programs.zsh = {
     enable = true;
-    dotDir = "${config.xdg.configHome}/zsh";
+    dotDir = "/zsh";
 
     history = {
       size = 10000;

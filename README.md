@@ -7,7 +7,7 @@ This repository contains my preferred system and home configuration.
   - [ ] Properly setup autocompletion and snippets support.
   - [ ] Properly setup nvim-tmux-navigator.
   - [ ] (Optional) Setup plugins using home-manager for better compatibility with nixOS.
-- [ ] Create script `amaterasu`, which provides a global short-hand for syncing system and home config.
+- [X] Create script `amaterasu`, which provides a global short-hand for syncing system and home config.
 - [ ] Finalize eww configuration
 - [ ] Update GDM to use other monitor as primary
 
