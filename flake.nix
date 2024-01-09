@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -28,7 +28,7 @@
         kirsch = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./user/home.nix ];
-          extraSpecialArgs = { inherit dotfilesRoot; };
+          extraSpecialArgs = { inherit dotfilesRoot; inherit self; };
         };
       };
   };
