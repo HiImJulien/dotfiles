@@ -3,6 +3,13 @@
 {
   programs.zsh = {
     enable = true;
+    dotDir = "${config.xdg.configHome}/zsh";
+
+    history = {
+      size = 10000;
+      path = "${config.xdg.dataHome}/zsh/zsh_history";
+    };
+
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
