@@ -15,6 +15,7 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
+      dotfilesRoot = "~/Repositories/dotfiles";
     in {
       nixosConfigurations = {
         amaterasu = lib.nixosSystem {
@@ -27,6 +28,7 @@
         kirsch = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./user/home.nix ];
+          extraSpecialArgs = { inherit dotfilesRoot; };
         };
       };
   };
