@@ -13,6 +13,18 @@
     vimdiffAlias = true;
     defaultEditor = true;
 
+    plugins = with pkgs.vimPlugins; [
+      pkgs.vimPlugins.catppuccin-nvim
+      pkgs.vimPlugins.telescope-nvim
+      pkgs.vimPlugins.plenary-nvim
+      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+      pkgs.vimPlugins.mason-nvim
+      pkgs.vimPlugins.mason-lspconfig-nvim
+      pkgs.vimPlugins.mason-tool-installer-nvim
+      pkgs.vimPlugins.nvim-lspconfig
+      pkgs.vimPlugins.yuck-vim
+    ];
+
     extraLuaConfig = ''
       ${builtins.readFile ./init.lua}
     '';

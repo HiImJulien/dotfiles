@@ -85,6 +85,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    pkgs.aerc
     pkgs.alacritty
     pkgs.brave
     pkgs.clang
