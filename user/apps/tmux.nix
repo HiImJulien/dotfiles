@@ -13,8 +13,7 @@
         '';
       }
       tmuxPlugins.sensible
-      # Needs to be configured later!
-      # tmuxPlugins.vim-tmux-navigator
+      tmuxPlugins.vim-tmux-navigator
     ];
     extraConfig = ''
       set -ga terminal-overrides ",alacritty:Tc"
