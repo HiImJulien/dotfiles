@@ -1,11 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Specify how the system interacts with neoVIm
-  # Plugins are deliberately not specified here,
-  # instead they're declared within the neoVIm config
-  # to ensure compatibility with systems, that do not
-  # support home manager.
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -22,13 +17,12 @@
       pkgs.vimPlugins.nvim-treesitter.withAllGrammars
       pkgs.vimPlugins.plenary-nvim
       pkgs.vimPlugins.telescope-nvim
+      pkgs.vimPlugins.telescope-ui-select-nvim
       pkgs.vimPlugins.vim-tmux-navigator
       pkgs.vimPlugins.yuck-vim
     ];
 
-    extraLuaConfig = ''
-      ${builtins.readFile ./init.lua}
-    '';
+    extraLuaConfig = (builtins.readFile ./init.lua);
   };
 
   xdg.configFile.nvim = {
