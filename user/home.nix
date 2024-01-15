@@ -17,7 +17,6 @@
 
   imports = [
     ./apps/alacritty.nix
-    ./apps/brave.nix
     ./apps/git.nix
     ./apps/tmux.nix
     ./apps/zsh.nix
