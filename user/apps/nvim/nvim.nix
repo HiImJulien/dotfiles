@@ -10,9 +10,17 @@
 
     plugins = with pkgs.vimPlugins; [
       pkgs.vimPlugins.catppuccin-nvim
+      pkgs.vimPlugins.cmp-nvim-lsp
+      pkgs.vimPlugins.cmp_luasnip
+      pkgs.vimPlugins.friendly-snippets
+      pkgs.vimPlugins.luasnip
       pkgs.vimPlugins.mason-lspconfig-nvim
       pkgs.vimPlugins.mason-nvim
       pkgs.vimPlugins.mason-tool-installer-nvim
+      pkgs.vimPlugins.none-ls-nvim
+      pkgs.vimPlugins.nvim-cmp
+      pkgs.vimPlugins.nvim-dap
+      pkgs.vimPlugins.nvim-dap-ui
       pkgs.vimPlugins.nvim-lspconfig
       pkgs.vimPlugins.nvim-treesitter.withAllGrammars
       pkgs.vimPlugins.plenary-nvim
