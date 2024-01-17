@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -59,7 +59,7 @@
 
   hardware = {
     pulseaudio = {
-      enable = true;
+      enable = false;
       package = pkgs.pulseaudioFull;
     };
 
@@ -82,6 +82,13 @@
         wayland = true;
       };
     };
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -95,7 +102,7 @@
     pkgs.gnome.gdm
     pkgs.gnome.gnome-keyring
     pkgs.gnome.seahorse
-    pkgs.hyprland
+    # pkgs.hyprland
     pkgs.neovim
     pkgs.nodejs_21 # Can I replace this with nvm etc.?
     pkgs.nwg-panel # Remove once eww is setup
@@ -104,13 +111,20 @@
     pkgs.tmux
     pkgs.unzip
     pkgs.wget
+    pkgs.wireplumber
     pkgs.wl-clipboard
     pkgs.wofi # Remove once eww is setup
+    pkgs.xdg-desktop-portal-gtk
+    pkgs.xdg-desktop-portal-hyprland
     pkgs.zsh
   ];
 
   programs = {
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    };
+
     zsh.enable = true;
     nix-ld.enable = true;
     ssh.startAgent = true;
@@ -123,6 +137,13 @@
     extraGroups = [ "wheel" "networkmanager" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
 
   system.stateVersion = "23.11";
