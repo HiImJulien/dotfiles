@@ -19,6 +19,7 @@ return {
                     "rust_analyzer",
                     "tailwindcss",
                     "tsserver",
+                    "nil_ls"
                     -- "nix"
                 },
             })
@@ -34,6 +35,22 @@ return {
             cfg.biome.setup({ capabilities = capabilities })
             cfg.tsserver.setup({ capabilities = capabilities })
             cfg.tailwindcss.setup({ capabilities = capabilities })
+
+            -- Not working?
+            -- cfg.nix_ls.setup({ capabilities = capabilities })
+            local lsc = require("lspconfig.configs")
+            if not lsc.nix_ls then
+                lsc.nix_ls = {
+                    default_config = {
+                        cmd = { "nil" },
+                        root_dir = cfg.util.root_pattern(".git"),
+                        filetypes = { "nix" }
+                    }
+                }
+            end
+
+            cfg.nix_ls.setup({ capabilities = capabilities })
+
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})

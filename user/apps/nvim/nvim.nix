@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 let
   fromGitHub = repo: ref: rev: pkgs.vimUtils.buildVimPlugin {
@@ -20,27 +20,27 @@ in
     defaultEditor = true;
 
     plugins = with pkgs.vimPlugins; [
-      pkgs.vimPlugins.catppuccin-nvim
-      pkgs.vimPlugins.cmp-nvim-lsp
-      pkgs.vimPlugins.cmp_luasnip
-      pkgs.vimPlugins.friendly-snippets
-      pkgs.vimPlugins.lualine-nvim
-      pkgs.vimPlugins.luasnip
-      pkgs.vimPlugins.mason-lspconfig-nvim
-      pkgs.vimPlugins.mason-nvim
-      pkgs.vimPlugins.mason-tool-installer-nvim
-      pkgs.vimPlugins.none-ls-nvim
-      pkgs.vimPlugins.nvim-cmp
-      pkgs.vimPlugins.nvim-dap
-      pkgs.vimPlugins.nvim-dap-ui
-      pkgs.vimPlugins.nvim-lspconfig
-      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-      pkgs.vimPlugins.nvim-web-devicons
-      pkgs.vimPlugins.plenary-nvim
-      pkgs.vimPlugins.telescope-nvim
-      pkgs.vimPlugins.telescope-ui-select-nvim
-      pkgs.vimPlugins.vim-tmux-navigator
-      pkgs.vimPlugins.yuck-vim
+      catppuccin-nvim
+      cmp-nvim-lsp
+      cmp_luasnip
+      friendly-snippets
+      lualine-nvim
+      luasnip
+      mason-lspconfig-nvim
+      mason-nvim
+      mason-tool-installer-nvim
+      none-ls-nvim
+      nvim-cmp
+      nvim-dap
+      nvim-dap-ui
+      nvim-lspconfig
+      nvim-treesitter.withAllGrammars
+      nvim-web-devicons
+      plenary-nvim
+      telescope-nvim
+      telescope-ui-select-nvim
+      vim-tmux-navigator
+      yuck-vim
 
       (fromGitHub "jonarrien/telescope-cmdline.nvim" "main" "51ebf3e585a660a431cab4ed7352c608350b0633")
     ];
