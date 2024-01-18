@@ -30,11 +30,15 @@
       pkgs.vimPlugins.yuck-vim
     ];
 
-    extraLuaConfig = (builtins.readFile ./init.lua);
+    extraLuaConfig = ''
+      vim.g.home_manager = true
+
+      ${builtins.readFile ./init.lua}
+    '';
   };
 
-  xdg.configFile.nvim = {
-    source = ../nvim;
+  xdg.configFile."nvim/lua" = {
+    source = ./lua;
     recursive = true;
   };
 }
