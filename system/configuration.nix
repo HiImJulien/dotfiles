@@ -109,6 +109,7 @@
     pkgs.nwg-panel # Remove once eww is setup
     pkgs.patchelf
     pkgs.plymouth
+    pkgs.rustup
     pkgs.tmux
     pkgs.unzip
     pkgs.wget
