@@ -79,6 +79,7 @@ do
             "lua_ls",
             "rust_analyzer",
             "tailwindcss",
+            "tsserver"
             -- "nix"
         },
     })
@@ -90,6 +91,9 @@ do
 
     local cfg = require("lspconfig")
     cfg.lua_ls.setup({ capabilities = capabilities })
+    cfg.biome.setup({ capabilities = capabilities })
+    cfg.tsserver.setup({ capabilities = capabilities })
+    cfg.tailwindcss.setup({ capabilities = capabilities })
 
     vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
@@ -102,6 +106,7 @@ do
     null_ls.setup({
         sources = {
             null_ls.builtins.formatting.stylua,
+            null_ls.builtins.formatting.biome
         },
     })
 
