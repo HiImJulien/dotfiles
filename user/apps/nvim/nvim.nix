@@ -13,6 +13,7 @@
       pkgs.vimPlugins.cmp-nvim-lsp
       pkgs.vimPlugins.cmp_luasnip
       pkgs.vimPlugins.friendly-snippets
+      pkgs.vimPlugins.lualine-nvim
       pkgs.vimPlugins.luasnip
       pkgs.vimPlugins.mason-lspconfig-nvim
       pkgs.vimPlugins.mason-nvim
