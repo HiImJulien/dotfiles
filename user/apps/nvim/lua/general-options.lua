@@ -9,3 +9,4 @@ vim.o.smarttab = true
 vim.o.colorcolumn = 80
 vim.g.mapleader = " "
 
+vim.cmd("set cmdheight=0")
