@@ -92,17 +92,18 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # pkgs.hyprland
     pkgs.aerc
     pkgs.alacritty
     pkgs.brave
     pkgs.clang
     pkgs.eww-wayland
+    pkgs.fd
     pkgs.file
     pkgs.git
     pkgs.gnome.gdm
     pkgs.gnome.gnome-keyring
     pkgs.gnome.seahorse
-    # pkgs.hyprland
     pkgs.neovim
     pkgs.nodejs_21 # Can I replace this with nvm etc.?
     pkgs.nwg-panel # Remove once eww is setup
