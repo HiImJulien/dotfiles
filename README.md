@@ -4,7 +4,7 @@ This repository contains my preferred system and home configuration.
 
 ## TODO
 - [ ] Finalize nVim configuration
-  - [ ] Properly setup autocompletion and snippets support.
+  - [X] Properly setup autocompletion and snippets support.
   - [ ] Properly setup nvim-tmux-navigator.
   - [X] (Optional) Setup plugins using home-manager for better compatibility with nixOS.
 - [X] Create script `amaterasu`, which provides a global short-hand for syncing system and home config.
