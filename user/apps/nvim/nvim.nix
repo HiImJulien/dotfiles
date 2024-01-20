@@ -37,6 +37,7 @@ in
       nvim-treesitter.withAllGrammars
       nvim-web-devicons
       plenary-nvim
+      telescope-file-browser-nvim
       telescope-nvim
       telescope-ui-select-nvim
       vim-tmux-navigator
