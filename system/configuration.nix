@@ -93,32 +93,33 @@
 
   environment.systemPackages = with pkgs; [
     # pkgs.hyprland
-    pkgs.aerc
-    pkgs.alacritty
-    pkgs.brave
-    pkgs.clang
-    pkgs.eww-wayland
-    pkgs.fd
-    pkgs.file
-    pkgs.git
-    pkgs.gnome.gdm
-    pkgs.gnome.gnome-keyring
-    pkgs.gnome.seahorse
-    pkgs.neovim
-    pkgs.nodejs_21 # Can I replace this with nvm etc.?
-    pkgs.nwg-panel # Remove once eww is setup
-    pkgs.patchelf
-    pkgs.plymouth
-    pkgs.rustup
-    pkgs.tmux
-    pkgs.unzip
-    pkgs.wget
-    pkgs.wireplumber
-    pkgs.wl-clipboard
-    pkgs.wofi # Remove once eww is setup
-    pkgs.xdg-desktop-portal-gtk
-    pkgs.xdg-desktop-portal-hyprland
-    pkgs.zsh
+    jq
+    aerc
+    alacritty
+    brave
+    clang
+    eww-wayland
+    fd
+    file
+    git
+    gnome.gdm
+    gnome.gnome-keyring
+    gnome.seahorse
+    neovim
+    nodejs_21 # Can I replace this with nvm etc.?
+    nwg-panel # Remove once eww is setup
+    patchelf
+    plymouth
+    rustup
+    tmux
+    unzip
+    wget
+    wireplumber
+    wl-clipboard
+    wofi # Remove once eww is setup
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
+    zsh
   ];
 
   programs = {
