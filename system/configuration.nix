@@ -1,5 +1,10 @@
 { inputs, config, lib, pkgs, ... }:
 
+let
+  pythonPkgs = ps: with ps; [
+    pydbus
+  ];
+in
 {
   imports = [
       ./hardware-configuration.nix
@@ -19,6 +24,8 @@
 
     plymouth.enable = true;
   };
+
+  nixpkgs.config.allowUnfree = true;
 
   security.polkit.enable = true;
   systemd = {
@@ -92,8 +99,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # pkgs.hyprland
-    jq
     aerc
     alacritty
     brave
@@ -105,12 +110,15 @@
     gnome.gdm
     gnome.gnome-keyring
     gnome.seahorse
+    jq
     neovim
     nodejs_21 # Can I replace this with nvm etc.?
     nwg-panel # Remove once eww is setup
     patchelf
     plymouth
+    (python312.withPackages(pythonPkgs))
     rustup
+    socat
     tmux
     unzip
     wget
@@ -120,6 +128,7 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     zsh
+    steam
   ];
 
   programs = {
@@ -127,6 +136,12 @@
       enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    };
+
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
     };
 
     zsh.enable = true;
