@@ -73,6 +73,14 @@ in
     bluetooth = {
       enable = true;
       powerOnBoot = true;
+
+      # Required to read power status
+      settings = {
+        General = {
+          Experimental = true;
+        };
+      };
+
     };
   };
 
