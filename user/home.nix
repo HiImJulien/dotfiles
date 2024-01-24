@@ -17,6 +17,7 @@
 
   imports = [
     ./apps/alacritty.nix
+    ./apps/eww.nix
     ./apps/git.nix
     ./apps/hyprland.nix
     ./apps/nvim/nvim.nix
