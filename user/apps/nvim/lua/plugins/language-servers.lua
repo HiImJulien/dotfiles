@@ -35,6 +35,7 @@ return {
             cfg.biome.setup({ capabilities = capabilities })
             cfg.tsserver.setup({ capabilities = capabilities })
             cfg.tailwindcss.setup({ capabilities = capabilities })
+            cfg.rust_analyzer.setup({ capabilities = capabilities })
 
             -- Not working?
             -- cfg.nix_ls.setup({ capabilities = capabilities })
