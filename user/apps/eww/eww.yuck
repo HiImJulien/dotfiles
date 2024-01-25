@@ -73,7 +73,7 @@
   :namespace "eww-bar"
   (bar))
 
-(defwindow second-bar 
+(defwindow second-bar
   :monitor 0
   :geometry (geometry :x "0"
                       :y "10px"
@@ -93,7 +93,8 @@
   (box :orientation "v" :space-evenly true
     (power-menu-item :menu-label "Lock" :action "echo Lock")
     (power-menu-item :menu-label "Sleep" :action "systemctl suspend")
-    (power-menu-item :menu-label "Shutdown")
+    (power-menu-item :menu-label "Reboot" :action "systemctl reboot")
+    (power-menu-item :menu-label "Shutdown" :action "poweroff")
   ))
 
 (defwindow power-menu-window
