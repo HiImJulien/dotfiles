@@ -137,6 +137,8 @@ in
     xdg-desktop-portal-hyprland
     zsh
     steam
+    pkg-config
+    openssl
   ];
 
   virtualisation.docker.enable = true;
