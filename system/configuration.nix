@@ -139,6 +139,8 @@ in
     steam
   ];
 
+  virtualisation.docker.enable = true;
+
   programs = {
     hyprland = {
       enable = true;
@@ -161,8 +163,8 @@ in
     isNormalUser = true;
     home = "/home/kirsch";
     description = "Julian Kirsch";
-    extraGroups = [ "wheel" "networkmanager" ];
-    packages = with pkgs; [];
+    extraGroups = [ "wheel" "networkmanager" "docker" ];
+    packages = [];
     shell = pkgs.zsh;
   };
 
