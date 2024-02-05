@@ -1,9 +1,10 @@
-{ inputs, config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, unstable, ... }:
 
 let
   pythonPkgs = ps: with ps; [
     pydbus
   ];
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in
 {
   imports = [
@@ -25,7 +26,12 @@ in
     plymouth.enable = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "electron-25.9.0"
+    ];
+  };
 
   security.polkit.enable = true;
   systemd = {
@@ -107,6 +113,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    (python312.withPackages(pythonPkgs))
     aerc
     alacritty
     brave
@@ -122,11 +129,14 @@ in
     neovim
     nodejs_21 # Can I replace this with nvm etc.?
     nwg-panel # Remove once eww is setup
+    obsidian
+    openssl
     patchelf
+    pkg-config
     plymouth
-    (python312.withPackages(pythonPkgs))
     rustup
     socat
+    steam
     tmux
     unzip
     wget
@@ -136,9 +146,6 @@ in
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     zsh
-    steam
-    pkg-config
-    openssl
   ];
 
   virtualisation.docker.enable = true;
@@ -180,8 +187,8 @@ in
   system.stateVersion = "23.11";
 
   nixpkgs.overlays = [
-    (self: super: {
-      brave = super.brave.override {
+    (new: prev: {
+      brave = prev.brave.override {
         commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=gnome";
       };
     })

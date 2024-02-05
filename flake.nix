@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
+    unstable.url = "nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
 
     home-manager = {
@@ -21,7 +22,7 @@
       nixosConfigurations = {
         amaterasu = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs; };
+          specialArgs.inputs = inputs;
           modules = [ ./system/configuration.nix ];
         };
       };
