@@ -19,7 +19,8 @@ return {
                     "rust_analyzer",
                     "tailwindcss",
                     "tsserver",
-                    "nil_ls"
+                    "nil_ls",
+                    "svelte"
                     -- "nix"
                 },
             })
@@ -30,12 +31,22 @@ return {
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+            local on_attach = function(client, bufnr)
+                local opts = { noremap = true, silent = true, buffer = bufnr }
+
+                vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+                vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+                vim.keymap.set("n", "lr", vim.lsp.buf.rename, opts)
+            end
+
             local cfg = require("lspconfig")
-            cfg.lua_ls.setup({ capabilities = capabilities })
-            cfg.biome.setup({ capabilities = capabilities })
-            cfg.tsserver.setup({ capabilities = capabilities })
-            cfg.tailwindcss.setup({ capabilities = capabilities })
-            cfg.rust_analyzer.setup({ capabilities = capabilities })
+            cfg.lua_ls.setup({ capabilities = capabilities, on_attach = on_attach })
+            cfg.biome.setup({ capabilities = capabilities, on_attach = on_attach })
+            cfg.tsserver.setup({ capabilities = capabilities, on_attach = on_attach })
+            cfg.tailwindcss.setup({ capabilities = capabilities, on_attach = on_attach })
+            cfg.rust_analyzer.setup({ capabilities = capabilities, on_attach = on_attach })
+            cfg.svelte.setup({ capabilities = capabilities, on_attach = on_attach })
 
             -- Not working?
             -- cfg.nix_ls.setup({ capabilities = capabilities })
@@ -45,13 +56,12 @@ return {
                     default_config = {
                         cmd = { "nil" },
                         root_dir = cfg.util.root_pattern(".git"),
-                        filetypes = { "nix" }
-                    }
+                        filetypes = { "nix" },
+                    },
                 }
             end
 
             cfg.nix_ls.setup({ capabilities = capabilities })
-
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})

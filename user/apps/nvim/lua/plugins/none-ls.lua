@@ -6,7 +6,7 @@ return {
             sources = {
                 null.builtins.formatting.stylua,
                 null.builtins.formatting.biome,
-                null.builtins.formatting.nixfmt
+                null.builtins.formatting.nixfmt,
             },
         })
 
