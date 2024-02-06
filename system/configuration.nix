@@ -26,13 +26,6 @@ in
     plymouth.enable = true;
   };
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [
-      "electron-25.9.0"
-    ];
-  };
-
   security.polkit.enable = true;
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
@@ -120,6 +113,8 @@ in
     clang
     eww-wayland
     fd
+    figma-agent
+    figma-linux
     file
     git
     gnome.gdm
@@ -129,14 +124,12 @@ in
     neovim
     nodejs_21 # Can I replace this with nvm etc.?
     nwg-panel # Remove once eww is setup
-    obsidian
     openssl
     patchelf
     pkg-config
     plymouth
     rustup
     socat
-    steam
     tmux
     unzip
     wget
@@ -155,12 +148,6 @@ in
       enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
-    };
-
-    steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
     };
 
     zsh.enable = true;
