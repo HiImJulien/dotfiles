@@ -3,8 +3,9 @@
 let
   pythonPkgs = ps: with ps; [
     pydbus
+    click
+    flit
   ];
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in
 {
   imports = [
@@ -106,7 +107,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    (python312.withPackages(pythonPkgs))
+    (python311.withPackages(pythonPkgs))
     aerc
     alacritty
     brave
@@ -139,6 +140,8 @@ in
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     zsh
+    poetry
+    inputs.brisingr.packages.${pkgs.system}.brisingr
   ];
 
   virtualisation.docker.enable = true;
