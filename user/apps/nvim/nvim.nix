@@ -1,16 +1,5 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
-let
-  fromGitHub = repo: ref: rev: pkgs.vimUtils.buildVimPlugin {
-    pname = "${lib.strings.sanitizeDerivationName repo}";
-    version = ref;
-    src = builtins.fetchGit {
-      url = "https://github.com/${repo}.git";
-      ref = ref;
-      rev = rev;
-    };
-  };
-in
 {
   programs.neovim = {
     enable = true;
@@ -29,6 +18,7 @@ in
       mason-lspconfig-nvim
       mason-nvim
       mason-tool-installer-nvim
+      noice-nvim
       none-ls-nvim
       nvim-cmp
       nvim-dap
@@ -42,8 +32,6 @@ in
       telescope-ui-select-nvim
       vim-tmux-navigator
       yuck-vim
-
-      (fromGitHub "jonarrien/telescope-cmdline.nvim" "main" "51ebf3e585a660a431cab4ed7352c608350b0633")
     ];
 
     extraLuaConfig = ''

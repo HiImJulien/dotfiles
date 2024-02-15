@@ -142,6 +142,7 @@ in
     zsh
     poetry
     inputs.brisingr.packages.${pkgs.system}.brisingr
+    mongodb-compass
   ];
 
   virtualisation.docker.enable = true;
@@ -176,6 +177,7 @@ in
 
   system.stateVersion = "23.11";
 
+  nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [
     (new: prev: {
       brave = prev.brave.override {
