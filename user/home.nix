@@ -25,6 +25,7 @@
     ./apps/eww.nix
     ./apps/git.nix
     ./apps/hyprland.nix
+    ./apps/hyprpaper.nix
     ./apps/nvim/nvim.nix
     ./apps/tmux.nix
     ./apps/zsh.nix

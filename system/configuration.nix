@@ -141,6 +141,7 @@ in
     zsh
     poetry
     p7zip
+    hyprpaper
   ];
 
   virtualisation.docker.enable = true;
