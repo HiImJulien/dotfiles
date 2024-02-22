@@ -124,7 +124,6 @@ in
     jq
     neovim
     nodejs_21 # Can I replace this with nvm etc.?
-    nwg-panel # Remove once eww is setup
     openssl
     patchelf
     pkg-config
@@ -141,8 +140,7 @@ in
     xdg-desktop-portal-hyprland
     zsh
     poetry
-    inputs.brisingr.packages.${pkgs.system}.brisingr
-    mongodb-compass
+    p7zip
   ];
 
   virtualisation.docker.enable = true;
