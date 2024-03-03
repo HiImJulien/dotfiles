@@ -114,8 +114,6 @@ in
     clang
     eww-wayland
     fd
-    figma-agent
-    figma-linux
     file
     git
     gnome.gdm
