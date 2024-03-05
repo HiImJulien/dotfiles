@@ -88,6 +88,7 @@ in
     blueman.enable = true;
     gnome.gnome-keyring.enable = true;
 
+
     xserver = {
       enable = true;
       layout = "de";
@@ -96,6 +97,8 @@ in
         enable = true;
         wayland = true;
       };
+
+      desktopManager.gnome.enable = true;
     };
 
     pipewire = {
@@ -119,6 +122,7 @@ in
     gnome.gdm
     gnome.gnome-keyring
     gnome.seahorse
+    gnome.mutter
     jq
     neovim
     nodejs_21 # Can I replace this with nvm etc.?
@@ -168,7 +172,7 @@ in
   xdg.portal = {
     enable = true;
     extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
+      # pkgs.xdg-desktop-portal-gtk
     ];
   };
 
