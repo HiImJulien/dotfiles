@@ -1,8 +1,5 @@
-# EditorConfig for my dotfiles
-
 root = true
 
-# General preferences
 [*]
 charset = utf-8
 end_of_line = lf
@@ -12,7 +9,5 @@ insert_final_newline = true
 max_line_length = 120
 trim_trailing_whitespace = true
 
-# .nix uses 2 spaces instead of 4
 [*.nix]
 indent_size = 2
-
