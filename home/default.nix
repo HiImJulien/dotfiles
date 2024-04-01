@@ -19,6 +19,7 @@
 
   imports = [
     ./alacritty
+    ./foot
     ./git
     ./nvim
     ./zsh
