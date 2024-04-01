@@ -9,9 +9,18 @@
     stateVersion = "23.11";
   };
 
+  home.packages = [
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
+
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+  ];
+
   imports = [
     ./git
     ./nvim
+    ./zsh
   ];
 }
 
