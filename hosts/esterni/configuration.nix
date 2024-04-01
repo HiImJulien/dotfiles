@@ -19,11 +19,26 @@
 
   networking.hostName = "esterni";
   environment.systemPackages = with pkgs; [
-    wget
-    neovim
+    foot
     git
+    neovim
     nodejs_20
+    wget
+    zsh
   ];
+
+  programs = {
+    zsh.enable = true;
+    ssh.startAgent = true;
+  };
+
+  users.users.kirsch = {
+    description = "Julian Kirsch";
+    extraGroups = ["wheel" "docker"];
+    home = "/home/kirsch";
+    isNormalUser = true;
+    shell = pkgs.zsh;
+  };
 
   system.stateVersion = "23.11";
 }
