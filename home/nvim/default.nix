@@ -40,7 +40,6 @@ in
     ];
 
     extraLuaConfig = builtins.readFile ./init.lua;
-
     extraPackages = with pkgs; [
       fzf
       lua-language-server
