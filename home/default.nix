@@ -18,6 +18,7 @@
   ];
 
   imports = [
+    ./alacritty
     ./git
     ./nvim
     ./zsh
