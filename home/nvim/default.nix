@@ -1,5 +1,16 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, super, ... }:
 
+let
+  fromGitHub = owner: repo: rev: hash: pkgs.vimUtils.buildVimPlugin {
+    name = repo;
+    src = pkgs.fetchFromGitHub {
+      inherit owner;
+      inherit repo;
+      inherit rev;
+      inherit hash;
+    };
+  };
+in
 {
   programs.neovim = {
     enable = true;
@@ -29,22 +40,22 @@
     ];
 
     extraLuaConfig = builtins.readFile ./init.lua;
+
+    extraPackages = with pkgs; [
+      fzf
+      lua-language-server
+      stylua
+      nodePackages.svelte-language-server
+      nodePackages.typescript-language-server
+      nodePackages.vscode-json-languageserver
+      rust-analyzer
+      tailwindcss-language-server
+    ];
   };
 
   xdg.configFile."nvim/lua" = {
     source = ./lua;
     recursive = true;
   };
-
-  home.packages = with pkgs; [
-    fzf
-    lua-language-server
-    stylua
-    nodePackages.svelte-language-server
-    nodePackages.typescript-language-server
-    nodePackages.vscode-json-languageserver
-    rust-analyzer
-    tailwindcss-language-server
-  ];
 
 }
