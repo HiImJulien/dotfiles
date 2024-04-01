@@ -22,6 +22,7 @@
     ./foot
     ./git
     ./nvim
+    ./tmux
     ./zsh
   ];
 }
