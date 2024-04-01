@@ -24,6 +24,19 @@ function M.configure()
     lspconfig.tsserver.setup(opts)
     lspconfig.tailwindcss.setup(opts)
     lspconfig.rust_analyzer.setup(opts)
+
+    lspconfig.jsonls.setup({
+        -- It has a different name on nixOS.
+        cmd = { "vscode-json-languageserver", "--stdio" },
+        on_attach = on_attach,
+        capabilities = cmp_capabilities,
+        settings = {
+            json = {
+                schemas = require("schemastore").json.schemas(),
+                validate = { enable = true },
+            },
+        },
+    })
 end
 
 return M

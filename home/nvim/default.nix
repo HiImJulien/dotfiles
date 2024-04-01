@@ -9,6 +9,7 @@
     defaultEditor = true;
 
     plugins = with pkgs.vimPlugins; [
+      SchemaStore-nvim
       catppuccin-nvim
       cmp-nvim-lsp
       cmp_luasnip
@@ -41,6 +42,7 @@
     stylua
     nodePackages.svelte-language-server
     nodePackages.typescript-language-server
+    nodePackages.vscode-json-languageserver
     rust-analyzer
     tailwindcss-language-server
   ];
