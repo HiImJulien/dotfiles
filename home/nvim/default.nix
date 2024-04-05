@@ -41,6 +41,8 @@ in
 
     extraLuaConfig = builtins.readFile ./init.lua;
     extraPackages = with pkgs; [
+      fd
+      ripgrep
       fzf
       lua-language-server
       stylua

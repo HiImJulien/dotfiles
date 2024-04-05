@@ -13,9 +13,13 @@
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ags = {
+      url = "github:Aylur/ags";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -25,8 +29,8 @@
         esterni = lib.nixosSystem {
           inherit system;
           specialArgs.inputs = inputs;
-          modules = [ 
-            ./hosts/esterni/configuration.nix 
+          modules = [
+            ./hosts/esterni/configuration.nix
             inputs.nixos-wsl.nixosModules.wsl
           ];
         };
