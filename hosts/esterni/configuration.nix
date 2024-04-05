@@ -11,10 +11,18 @@
     settings = {
       experimental-features = ["nix-command" "flakes"];
     };
-      gc = {
-        automatic = true;
-        options = "--delete-older-than 7d";
-      };
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 7d";
+    };
+  };
+
+  virtualisation = {
+    docker = {
+      enable = true;
+      rootless.enable = true;
+      rootless.setSocketVariable = true;
+    };
   };
 
   networking.hostName = "esterni";
