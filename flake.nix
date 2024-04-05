@@ -41,7 +41,7 @@
           inherit pkgs;
           modules = [ ./home ];
 
-          extraSpecialArgs = { inherit self; };
+          extraSpecialArgs = { inherit self; inherit inputs; };
         };
       };
   };
