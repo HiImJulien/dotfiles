@@ -27,12 +27,14 @@
 
   networking.hostName = "esterni";
   environment.systemPackages = with pkgs; [
+    gcc
     foot
     git
     neovim
     nodejs_20
     wget
     zsh
+    rustup
   ];
 
   programs = {
