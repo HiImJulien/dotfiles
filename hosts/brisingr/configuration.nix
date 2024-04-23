@@ -76,6 +76,10 @@
       };
 
       desktopManager.gnome.enable = true;
+
+      excludePackages = [
+        pkgs.xterm
+      ];
     };
 
     pipewire = {
@@ -122,6 +126,30 @@
     wl-clipboard
     zsh
   ];
+
+  # Debloat GNOME
+  environment.gnome.excludePackages = (with pkgs; [
+    epiphany
+    gnome-console
+    gnome-photos
+    gnome-text-editor
+    gnome-tour
+    gnome-user-docs
+    gnome.cheese
+    gnome.evince
+    gnome.geary
+    gnome.gnome-calculator
+    gnome.gnome-calendar
+    gnome.gnome-characters
+    gnome.gnome-clocks
+    gnome.gnome-contacts
+    gnome.gnome-maps
+    gnome.gnome-music
+    gnome.gnome-terminal
+    gnome.gnome-weather
+    gnome.totem
+    gnome.yelp
+  ]);
 
   system.stateVersion = "23.11";
 }
