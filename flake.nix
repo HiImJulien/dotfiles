@@ -34,6 +34,14 @@
             inputs.nixos-wsl.nixosModules.wsl
           ];
         };
+
+        brisingr = lib.nixosSystem {
+          inherit system;
+          specialArgs.inputs = inputs;
+          modules = [
+            ./hosts/brisingr/configuration.nix
+          ];
+        };
       };
 
       homeConfigurations = {
