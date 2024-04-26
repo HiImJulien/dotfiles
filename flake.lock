@@ -131,7 +131,20 @@
         "ags": "ags",
         "home-manager": "home-manager",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "ssh-ids": "ssh-ids"
+      }
+    },
+    "ssh-ids": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-CEoTfnM23vQr3DPXT5IXuyZUYT3dVabQKdL/kRwroTE=",
+        "type": "file",
+        "url": "https://github.com/HiImJulien.keys"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/HiImJulien.keys"
       }
     },
     "systems": {

@@ -17,6 +17,11 @@
     ags = {
       url = "github:Aylur/ags";
     };
+
+    ssh-ids = {
+      url = "https://github.com/HiImJulien.keys";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -42,13 +47,20 @@
             ./hosts/brisingr/configuration.nix
           ];
         };
+
+        niernen = lib.nixosSystem {
+          system = "aarch64-linux";
+          specialArgs.inputs = inputs;
+          modules = [
+            ./hosts/niernen/configuration.nix
+          ];
+        };
       };
 
       homeConfigurations = {
         kirsch = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./home ];
-
           extraSpecialArgs = { inherit self; inherit inputs; };
         };
       };
