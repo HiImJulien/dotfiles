@@ -18,7 +18,22 @@
     };
   };
 
-  networking.hostName = "office-juliankirsch-me";
+  networking = {
+    hostName = "niernen-1";
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        80  # Required for http
+        443 # Required for https
+      ];
+
+      allowedUDPPorts = [
+        80  # Required for http3
+        443
+      ];
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     neovim
     git
