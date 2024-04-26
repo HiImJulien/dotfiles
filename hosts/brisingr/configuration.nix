@@ -118,6 +118,8 @@
     openssl
     p7zip
     plymouth
+    qemu
+    quickemu
     rustup
     tmux
     unzip
