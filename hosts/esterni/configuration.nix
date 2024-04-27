@@ -1,28 +1,15 @@
 { config, lib, pkgs, ... }:
 
 {
+  imports =
+    [
+      ../_common
+    ];
+
   wsl = {
     enable = true;
     defaultUser = "kirsch";
     startMenuLaunchers = true;
-  };
-
-  nix = {
-    settings = {
-      experimental-features = ["nix-command" "flakes"];
-    };
-    gc = {
-      automatic = true;
-      options = "--delete-older-than 7d";
-    };
-  };
-
-  virtualisation = {
-    docker = {
-      enable = true;
-      rootless.enable = true;
-      rootless.setSocketVariable = true;
-    };
   };
 
   networking.hostName = "esterni";
@@ -36,19 +23,6 @@
     zsh
     rustup
   ];
-
-  programs = {
-    zsh.enable = true;
-    ssh.startAgent = true;
-  };
-
-  users.users.kirsch = {
-    description = "Julian Kirsch";
-    extraGroups = ["wheel" "docker"];
-    home = "/home/kirsch";
-    isNormalUser = true;
-    shell = pkgs.zsh;
-  };
 
   system.stateVersion = "23.11";
 }
