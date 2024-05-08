@@ -25,6 +25,7 @@ function M.configure()
     lspconfig.tailwindcss.setup(opts)
     lspconfig.rust_analyzer.setup(opts)
     lspconfig.svelte.setup(opts)
+    lspconfig.astro.setup(opts)
 
     lspconfig.jsonls.setup({
         -- It has a different name on nixOS.

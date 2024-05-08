@@ -46,9 +46,10 @@ in
       fzf
       lua-language-server
       stylua
-      nodePackages.svelte-language-server
-      nodePackages.typescript-language-server
-      nodePackages.vscode-json-languageserver
+      nodePackages_latest.svelte-language-server
+      nodePackages_latest.typescript-language-server
+      nodePackages_latest.vscode-json-languageserver
+      nodePackages_latest."@astrojs/language-server"
       rust-analyzer
       tailwindcss-language-server
     ];
