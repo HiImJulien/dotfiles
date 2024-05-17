@@ -3,6 +3,7 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    catppuccin.enable = true;
 
     settings = {
       "$mod" = "SUPER";
@@ -12,7 +13,7 @@
         "$mod, C, killactive"
         "$mod, M, exit"
         "$mod, V, togglefloating"
-        "$mod, R, exec, wofi --show drun"
+        "$mod, R, exec, ags -t launcher"
 
         # Focus binds
         "$mod, H, movefocus, l"
@@ -52,6 +53,7 @@
 
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "ags"
       ];
 
       monitor = [

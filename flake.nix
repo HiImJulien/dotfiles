@@ -3,7 +3,7 @@
 
   inputs = {
     ags.url = "github:Aylur/ags";
-
+    catppuccin.url = "github:catppuccin/nix/a48e70a31616cb63e4794fd3465bff1835cc4246";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -19,7 +19,7 @@
     nixpkgs.url = "nixpkgs/nixos-23.11";
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
+  outputs = inputs @ { self, nixpkgs, home-manager, hyprland, catppuccin, ... }:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -29,12 +29,14 @@
         brisingr = lib.nixosSystem {
           inherit system;
           specialArgs.inputs = inputs;
+
           modules = [
             ./hosts/brisingr
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.kirsch = import ./home;
+              home-manager.extraSpecialArgs = { inherit inputs; };
             }
           ];
         };

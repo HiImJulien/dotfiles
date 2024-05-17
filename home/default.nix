@@ -1,4 +1,4 @@
-{ config, pkgs, self, ... }:
+{ config, inputs, pkgs, self, catppuccin, ... }:
 
 {
   programs.home-manager.enable = true;
@@ -18,12 +18,24 @@
   ];
 
   imports = [
+    inputs.catppuccin.homeManagerModules.catppuccin
+
+    ./ags
     ./alacritty
     ./git
+    ./gtk
     ./hyprland
     ./nvim
     ./tmux
     ./zsh
   ];
+
+  catppuccin = {
+    enable = true;
+    flavour = "mocha";
+    accent = "red";
+  };
+
+  xdg.enable = true;
 }
 

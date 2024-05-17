@@ -132,6 +132,7 @@
     wireplumber
     wl-clipboard
     zsh
+    nodejs_21
   ];
 
   # Debloat GNOME
