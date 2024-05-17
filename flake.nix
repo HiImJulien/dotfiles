@@ -9,18 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     ags = {
       url = "github:Aylur/ags";
-    };
-
-    ssh-ids = {
-      url = "https://github.com/HiImJulien.keys";
-      flake = false;
     };
   };
 
@@ -31,28 +21,11 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       nixosConfigurations = {
-        esterni = lib.nixosSystem {
-          inherit system;
-          specialArgs.inputs = inputs;
-          modules = [
-            ./hosts/esterni/configuration.nix
-            inputs.nixos-wsl.nixosModules.wsl
-          ];
-        };
-
         brisingr = lib.nixosSystem {
           inherit system;
           specialArgs.inputs = inputs;
           modules = [
-            ./hosts/brisingr/configuration.nix
-          ];
-        };
-
-        niernen = lib.nixosSystem {
-          system = "aarch64-linux";
-          specialArgs.inputs = inputs;
-          modules = [
-            ./hosts/niernen/configuration.nix
+            ./hosts/brisingr
           ];
         };
       };
