@@ -19,8 +19,8 @@
 
   imports = [
     ./alacritty
-    # ./foot
     ./git
+    ./hyprland
     ./nvim
     ./tmux
     ./zsh
