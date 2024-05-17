@@ -19,7 +19,7 @@
 
   imports = [
     ./alacritty
-    ./foot
+    # ./foot
     ./git
     ./nvim
     ./tmux
