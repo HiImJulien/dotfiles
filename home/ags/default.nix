@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ inputs, pkgs, config, ...}:
 
 {
   imports = [
@@ -7,12 +7,13 @@
 
   programs.ags = {
     enable = true;
+    extraPackages = with pkgs; [
+      accountsservice
+    ];
   };
 
-  xdg.configFile.ags  = {
-    enable = true;
+  xdg.configFile.ags = {
     recursive = true;
     source = config.lib.file.mkOutOfStoreSymlink ./ags;
-    target = "ags";
- };
+  };
 }
