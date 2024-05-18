@@ -82,7 +82,7 @@ function LauncherWidget(
  * @param {number} [spacing=12] - The spacing between items in the launcher window.
  */
 export function Launcher(
-  title = "Launcher",
+  title = "launcher",
   width = 600,
   height = 600,
   spacing = 12,

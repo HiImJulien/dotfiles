@@ -11,9 +11,4 @@
       accountsservice
     ];
   };
-
-  xdg.configFile.ags = {
-    recursive = true;
-    source = config.lib.file.mkOutOfStoreSymlink ./ags;
-  };
 }
