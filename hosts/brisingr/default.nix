@@ -133,6 +133,7 @@
     wl-clipboard
     zsh
     nodejs_21
+    teamspeak_client
   ];
 
   # Debloat GNOME
@@ -163,6 +164,17 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
+
+  programs.steam = {
+    enable = true;
+  };
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam"
+    "steam-original"
+    "steam-run"
+    "teamspeak-client"
+  ];
 
   system.stateVersion = "23.11";
 }
