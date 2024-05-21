@@ -16,6 +16,7 @@ function LauncherItem(app, parentTitle) {
   const box = Widget.EventBox({
     className: "launcher__item",
     attribute: { app },
+    on_primary_click: onClickApp,
     child: Widget.Box({
       children: [
         Widget.Icon({
@@ -32,8 +33,6 @@ function LauncherItem(app, parentTitle) {
       ],
     }),
   });
-
-  box.on_primary_click = onClickApp;
 
   return box;
 }

@@ -25,6 +25,7 @@
     ./git
     ./gtk
     ./hyprland
+    ./hyprpaper
     ./nvim
     ./tmux
     ./zsh

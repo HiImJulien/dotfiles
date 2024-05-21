@@ -16,6 +16,10 @@
       brave = prev.brave.override {
         commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=gnome";
       };
+
+      brave-x = prev.brave.override {
+        commandLineArgs = "--password-store=gnome";
+      };
     })
   ];
 
@@ -111,6 +115,7 @@
   environment.systemPackages = with pkgs; [
     alacritty
     brave
+    brave-x
     fd
     file
     git
@@ -166,6 +171,10 @@
   };
 
   programs.steam = {
+    enable = true;
+  };
+
+  programs.xwayland = {
     enable = true;
   };
 

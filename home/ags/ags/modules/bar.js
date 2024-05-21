@@ -11,12 +11,22 @@ function Left(monitor) {
 
 
 /**
+ * Contains the center widget comprised of a label, that displays the current
+ * time. On click it open the calendar.
  * @param {number} monitor - The id of the monitor this widget is displayed on.
  */
 function Center(monitor) {
-    return Widget.Box({
-        css: "padding: 1px;",
-        child: Widget.Label({ label: "Hello, World!" })
+    const date = Variable("", {
+        poll: [1000, "date \"+%a %H:%M\""]
+    });
+
+    return Widget.EventBox({
+        on_primary_click: () => {
+            console.log("Click!");
+        },
+        child: Widget.Label({
+            label: date.bind()
+        })
     });
 }
 
