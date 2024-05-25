@@ -16,10 +16,6 @@
       brave = prev.brave.override {
         commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=gnome";
       };
-
-      brave-x = prev.brave.override {
-        commandLineArgs = "--password-store=gnome";
-      };
     })
   ];
 
@@ -115,7 +111,6 @@
   environment.systemPackages = with pkgs; [
     alacritty
     brave
-    brave-x
     fd
     file
     git
@@ -125,6 +120,7 @@
     gnome.seahorse
     jq
     neovim
+    nodejs_21
     openssl
     p7zip
     plymouth
@@ -137,8 +133,6 @@
     wireplumber
     wl-clipboard
     zsh
-    nodejs_21
-    teamspeak_client
   ];
 
   # Debloat GNOME
@@ -169,21 +163,6 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
-
-  programs.steam = {
-    enable = true;
-  };
-
-  programs.xwayland = {
-    enable = true;
-  };
-
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam"
-    "steam-original"
-    "steam-run"
-    "teamspeak-client"
-  ];
 
   system.stateVersion = "23.11";
 }
