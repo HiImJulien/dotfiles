@@ -37,6 +37,7 @@ in
       telescope-file-browser-nvim
       telescope-nvim
       telescope-ui-select-nvim
+      vim-tmux-navigator
     ];
 
     extraLuaConfig = builtins.readFile ./init.lua;
