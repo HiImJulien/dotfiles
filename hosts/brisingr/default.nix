@@ -118,14 +118,11 @@
     gnome.gnome-keyring
     gnome.mutter
     gnome.seahorse
-    jq
     neovim
     nodejs_20
     openssl
     p7zip
     plymouth
-    qemu
-    quickemu
     rustup
     tmux
     unzip
