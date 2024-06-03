@@ -11,13 +11,18 @@
       ../_common
     ];
 
-  nixpkgs.overlays = [
-    (new: prev: {
-      brave = prev.brave.override {
-        commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=gnome";
-      };
-    })
-  ];
+  nixpkgs = {
+    overlays = [
+      (new: prev: {
+        brave = prev.brave.override {
+          commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=gnome";
+        };
+    })];
+
+    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+      "lunacy"
+    ];
+  };
 
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
@@ -118,6 +123,7 @@
     gnome.gnome-keyring
     gnome.mutter
     gnome.seahorse
+    lunacy
     neovim
     nodejs_20
     openssl
