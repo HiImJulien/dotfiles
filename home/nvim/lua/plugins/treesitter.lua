@@ -12,8 +12,6 @@ function M.configure()
         highlight = { enable = true },
         indent = { enable = true },
     })
-
-    print("Loaded treesitter")
 end
 
 return M

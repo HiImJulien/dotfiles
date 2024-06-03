@@ -73,7 +73,7 @@
 
     xserver = {
       enable = true;
-      layout = "de";
+      xkb.layout = "de";
 
       displayManager.gdm = {
         enable = true;
@@ -120,7 +120,7 @@
     gnome.seahorse
     jq
     neovim
-    nodejs_21
+    nodejs_20
     openssl
     p7zip
     plymouth

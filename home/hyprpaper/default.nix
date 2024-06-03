@@ -7,20 +7,19 @@ let
   };
 in
 {
-  imports = [
-    inputs.hyprpaper.homeManagerModules.default
-  ];
-
   services.hyprpaper = {
     enable = true;
-    preloads = [
-      (builtins.toString wallpaper)
-    ];
+    settings = {
+      ipc = "off";
+      splash = false;
+      preload = [
+        (builtins.toString wallpaper)
+      ];
 
-    wallpapers = [
-      "DP-1,${builtins.toString wallpaper}"
-      "DP-2,${builtins.toString wallpaper}"
-    ];
-
+      wallpapers = [
+        "DP-1,${builtins.toString wallpaper}"
+        "DP-2,${builtins.toString wallpaper}"
+      ];
+    };
   };
 }
