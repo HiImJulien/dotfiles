@@ -14,7 +14,9 @@ function M.configure()
     none_ls.setup({
         sources = {
             none_ls.builtins.formatting.stylua,
-            none_ls.builtins.formatting.prettier,
+            none_ls.builtins.formatting.prettier.with({
+                extra_filetpyes = { "svelte", "astro", "mdx" },
+            }),
         },
     })
 

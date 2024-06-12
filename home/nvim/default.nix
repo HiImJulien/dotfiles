@@ -61,4 +61,14 @@ in
     recursive = true;
   };
 
+  xdg.configFile."nvim/after" = {
+    source = ./after;
+    recursive = true;
+  };
+
+  xdg.configFile."nvim/ftdetect" = {
+    source = ./ftdetect;
+    recursive = true;
+  };
+
 }
