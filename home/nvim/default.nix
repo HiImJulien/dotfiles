@@ -30,6 +30,7 @@ in
       none-ls-nvim
       none-ls-nvim
       nvim-cmp
+      nvim-dbee
       nvim-lspconfig
       nvim-notify
       nvim-treesitter.withAllGrammars

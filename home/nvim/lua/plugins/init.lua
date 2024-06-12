@@ -11,6 +11,7 @@ end
 
 load_plugin("catppuccin")
 load_plugin("cmp")
+load_plugin("dbee")
 load_plugin("lspconfig")
 load_plugin("noice")
 load_plugin("none-ls")
