@@ -9,8 +9,8 @@ function M.configure()
     local dbee = require("dbee")
 
     dbee.setup()
+    vim.api.nvim_create_user_command("Db", ":lua require('dbee').open()", {})
 end
 
-vim.api.nvim_create_user_command("Db", ":lua require('dbee').open()", {})
 
 return M

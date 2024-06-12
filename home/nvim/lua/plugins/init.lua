@@ -9,6 +9,8 @@ local function load_plugin(name)
     plugin.configure()
 end
 
+load_plugin("startup")
+
 load_plugin("catppuccin")
 load_plugin("cmp")
 load_plugin("dbee")

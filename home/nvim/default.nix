@@ -35,6 +35,7 @@ in
       nvim-notify
       nvim-treesitter.withAllGrammars
       plenary-nvim
+      startup-nvim
       telescope-file-browser-nvim
       telescope-nvim
       telescope-ui-select-nvim
