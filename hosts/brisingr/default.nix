@@ -123,6 +123,7 @@
     gnome.gnome-keyring
     gnome.mutter
     gnome.seahorse
+    hyprpaper
     lunacy
     neovim
     nodejs_20
