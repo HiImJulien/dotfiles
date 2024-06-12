@@ -21,8 +21,8 @@
     inputs.catppuccin.homeManagerModules.catppuccin
 
     ./ags
-    ./direnv
     ./alacritty
+    ./direnv
     ./git
     ./gtk
     ./hyprland
