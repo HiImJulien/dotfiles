@@ -21,6 +21,7 @@
     inputs.catppuccin.homeManagerModules.catppuccin
 
     ./ags
+    ./direnv
     ./alacritty
     ./git
     ./gtk
