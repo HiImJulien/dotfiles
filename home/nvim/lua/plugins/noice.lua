@@ -17,11 +17,23 @@ function M.configure()
             },
         },
         presets = {
-            bottom_search = true,
+            bottom_search = false,
             command_palette = true,
             long_message_to_split = true,
             inc_rename = false,
             lsp_doc_border = false,
+        },
+        routes = {
+            {
+                -- Disables the "file written" notification.
+                filter = {
+                    event = "msg_show",
+                    any = {
+                        { find = "written" },
+                    },
+                },
+                opts = { skip = true },
+            },
         },
     })
 end
