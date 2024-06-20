@@ -54,11 +54,11 @@
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "ags"
-        "hyprpaper &"
+        "hyprpaper"
       ];
 
       monitor = [
-        "DP-1,1920x1080@75,0x0,1,bitdepth,8"
+        "DP-1,1920x1080@75,0x0,1,bitdepth,10"
         "DP-2,1920x1080@144,1920x0,1,bitdepth,8"
       ];
 

@@ -11,12 +11,11 @@ in
     enable = true;
     settings = {
       ipc = "on";
-      splash = false;
       preload = [
         (builtins.toString wallpaper)
       ];
 
-      wallpapers = [
+      wallpaper = [
         "DP-1,${builtins.toString wallpaper}"
         "DP-2,${builtins.toString wallpaper}"
       ];

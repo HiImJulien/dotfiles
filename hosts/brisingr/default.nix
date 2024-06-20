@@ -123,7 +123,7 @@
     gnome.gnome-keyring
     gnome.mutter
     gnome.seahorse
-    hyprpaper
+    # hyprpaper
     lunacy
     neovim
     nodejs_20
@@ -137,7 +137,9 @@
     wireplumber
     wl-clipboard
     zsh
+    inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
   ];
+
 
   # Debloat GNOME
   environment.gnome.excludePackages = (with pkgs; [
@@ -167,6 +169,7 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
+
 
   system.stateVersion = "23.11";
 }

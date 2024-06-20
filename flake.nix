@@ -11,6 +11,7 @@
     };
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprpaper.url = "github:hyprwm/hyprpaper";
     nixpkgs.url = "nixpkgs/nixos-24.05";
   };
 
