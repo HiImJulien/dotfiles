@@ -45,15 +45,16 @@ in
     extraLuaConfig = builtins.readFile ./init.lua;
     extraPackages = with pkgs; [
       fd
-      ripgrep
       fzf
+      gopls
       lua-language-server
-      stylua
+      nodePackages_latest."@astrojs/language-server"
       nodePackages_latest.svelte-language-server
       nodePackages_latest.typescript-language-server
       nodePackages_latest.vscode-json-languageserver
-      nodePackages_latest."@astrojs/language-server"
+      ripgrep
       rust-analyzer
+      stylua
       tailwindcss-language-server
     ];
   };
