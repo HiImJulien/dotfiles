@@ -27,6 +27,7 @@ function M.configure()
     lspconfig.svelte.setup(opts)
     lspconfig.astro.setup(opts)
     lspconfig.gopls.setup(opts)
+    lspconfig.eslint.setup(opts)
 
     lspconfig.jsonls.setup({
         -- It has a different name on nixOS.

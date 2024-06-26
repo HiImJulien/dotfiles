@@ -51,7 +51,9 @@ in
       nodePackages_latest."@astrojs/language-server"
       nodePackages_latest.svelte-language-server
       nodePackages_latest.typescript-language-server
-      nodePackages_latest.vscode-json-languageserver
+      # nodePackages_latest.vscode-json-languageserver
+      # nodePackages_latest.vscode-eslint-language-server
+      vscode-langservers-extracted
       ripgrep
       rust-analyzer
       stylua
