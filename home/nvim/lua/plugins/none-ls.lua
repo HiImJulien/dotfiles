@@ -17,7 +17,8 @@ function M.configure()
             none_ls.builtins.formatting.prettier.with({
                 extra_filetpyes = { "svelte", "astro", "mdx" },
             }),
-            none_ls.builtins.formatting.golines
+            none_ls.builtins.formatting.golines,
+            none_ls.builtins.formatting.black
         },
     })
 

@@ -20,14 +20,17 @@ function M.configure()
     local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     local opts = { on_attach = on_attach, capabilities = cmp_capabilities }
-    lspconfig.lua_ls.setup(opts)
-    lspconfig.tsserver.setup(opts)
-    lspconfig.tailwindcss.setup(opts)
-    lspconfig.rust_analyzer.setup(opts)
-    lspconfig.svelte.setup(opts)
     lspconfig.astro.setup(opts)
     lspconfig.gopls.setup(opts)
-    lspconfig.eslint.setup(opts)
+    lspconfig.lua_ls.setup(opts)
+    lspconfig.phpactor.setup(opts)
+    lspconfig.pyright.setup(opts)
+    lspconfig.rust_analyzer.setup(opts)
+    lspconfig.svelte.setup(opts)
+    lspconfig.tailwindcss.setup(opts)
+    lspconfig.tsserver.setup(opts)
+    -- lspconfig.eslint.setup(opts)
+
 
     lspconfig.jsonls.setup({
         -- It has a different name on nixOS.

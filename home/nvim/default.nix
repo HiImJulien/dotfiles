@@ -44,6 +44,7 @@ in
 
     extraLuaConfig = builtins.readFile ./init.lua;
     extraPackages = with pkgs; [
+      black
       fd
       fzf
       gopls
@@ -52,6 +53,8 @@ in
       nodePackages_latest.svelte-language-server
       nodePackages_latest.typescript-language-server
       nodePackages_latest.vscode-json-languageserver
+      phpactor
+      pyright
       ripgrep
       rust-analyzer
       stylua
