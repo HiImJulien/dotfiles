@@ -21,6 +21,7 @@
 
     config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
       "lunacy"
+      "typora"
     ];
   };
 
@@ -133,7 +134,6 @@
     gnome.gnome-keyring
     gnome.mutter
     gnome.seahorse
-    # hyprpaper
     lunacy
     neovim
     nodejs_20
@@ -142,6 +142,7 @@
     plymouth
     rustup
     tmux
+    typora
     unzip
     wget
     wireplumber
