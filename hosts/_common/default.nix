@@ -10,6 +10,8 @@
       automatic = true;
       options = "--delete-older-than 7d";
     };
+
+    trustedUsers = [ "root" "@wheel" ];
   };
 
   virtualisation = {
