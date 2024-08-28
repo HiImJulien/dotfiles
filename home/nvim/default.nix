@@ -52,8 +52,8 @@ in
       nodePackages_latest."@astrojs/language-server"
       nodePackages_latest.svelte-language-server
       nodePackages_latest.typescript-language-server
-      nodePackages_latest.vscode-json-languageserver
-      phpactor
+      vscode-langservers-extracted
+      nodePackages_latest.intelephense
       pyright
       ripgrep
       rust-analyzer

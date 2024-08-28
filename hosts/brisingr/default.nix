@@ -22,6 +22,9 @@
     config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
       "lunacy"
       "typora"
+      "intelephense"
+      "httpie"
+      "httpie-desktop"
     ];
   };
 
@@ -52,6 +55,7 @@
 
       settings = {
         General = {
+          ControllerMode = "bredr";
           Experimental = true;
         };
       };
@@ -148,6 +152,8 @@
     wireplumber
     wl-clipboard
     zsh
+    httpie
+    httpie-desktop
     inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
   ];
 

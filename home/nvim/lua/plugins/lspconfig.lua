@@ -23,18 +23,19 @@ function M.configure()
     lspconfig.astro.setup(opts)
     lspconfig.gopls.setup(opts)
     lspconfig.lua_ls.setup(opts)
-    lspconfig.phpactor.setup(opts)
+    -- lspconfig.phpactor.setup(opts)
+    lspconfig.intelephense.setup(opts)
     lspconfig.pyright.setup(opts)
     lspconfig.rust_analyzer.setup(opts)
     lspconfig.svelte.setup(opts)
     lspconfig.tailwindcss.setup(opts)
     lspconfig.tsserver.setup(opts)
-    -- lspconfig.eslint.setup(opts)
+    lspconfig.eslint.setup(opts)
 
 
     lspconfig.jsonls.setup({
         -- It has a different name on nixOS.
-        cmd = { "vscode-json-languageserver", "--stdio" },
+        -- cmd = { "vscode-json-languageserver", "--stdio" },
         on_attach = on_attach,
         capabilities = cmp_capabilities,
         settings = {
