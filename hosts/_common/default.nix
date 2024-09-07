@@ -4,14 +4,13 @@
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
+      trusted-users = [ "root" "@wheel" ];
     };
 
     gc = {
       automatic = true;
       options = "--delete-older-than 7d";
     };
-
-    trustedUsers = [ "root" "@wheel" ];
   };
 
   virtualisation = {
