@@ -20,11 +20,8 @@
     })];
 
     config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-      "lunacy"
       "typora"
       "intelephense"
-      "httpie"
-      "httpie-desktop"
     ];
   };
 
@@ -128,6 +125,8 @@
   security.polkit.enable = true;
   sound.enable = true;
 
+  # Upgrade lunacy version to the latest.
+
   environment.systemPackages = with pkgs; [
     alacritty
     brave
@@ -138,7 +137,6 @@
     gnome.gnome-keyring
     gnome.mutter
     gnome.seahorse
-    lunacy
     neovim
     nodejs_20
     openssl
@@ -152,8 +150,6 @@
     wireplumber
     wl-clipboard
     zsh
-    httpie
-    httpie-desktop
     inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
   ];
 
