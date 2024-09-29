@@ -32,11 +32,35 @@
 
   boot = {
     loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+      efi.canTouchEfiVariables = false;
+
+      grub = {
+        enable = true;
+
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
+
+        extraEntries = ''
+        menuentry "Windows 11" {
+        }
+        '';
+
+        catppuccin = {
+          enable = true;
+          flavor = "mocha";
+        };
+      };
     };
 
-    plymouth.enable = true;
+    plymouth = {
+      enable = true;
+      catppuccin = {
+        enable = true;
+        flavor = "mocha";
+      };
+    };
+
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   };
 

@@ -27,6 +27,7 @@
           specialArgs.inputs = inputs;
 
           modules = [
+            catppuccin.nixosModules.catppuccin
             ./hosts/brisingr
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
