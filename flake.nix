@@ -2,7 +2,7 @@
   description = "System configuration by @HiImJulian";
 
   inputs = {
-    ags.url = "github:Aylur/ags";
+    ags.url = "github:aylur/ags";
     catppuccin.url = "github:catppuccin/nix";
 
     home-manager = {
@@ -19,7 +19,7 @@
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs { inherit system; };
     in {
       nixosConfigurations = {
         brisingr = lib.nixosSystem {

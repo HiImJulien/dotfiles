@@ -41,11 +41,6 @@
         efiSupport = true;
         useOSProber = true;
 
-        extraEntries = ''
-        menuentry "Windows 11" {
-        }
-        '';
-
         catppuccin = {
           enable = true;
           flavor = "mocha";
