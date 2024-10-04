@@ -151,11 +151,13 @@
     brave
     fd
     file
+    firefox
     git
     gnome.gdm
     gnome.gnome-keyring
     gnome.mutter
     gnome.seahorse
+    inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
     neovim
     nodejs_20
     openssl
@@ -169,7 +171,6 @@
     wireplumber
     wl-clipboard
     zsh
-    inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
   ];
 
 
