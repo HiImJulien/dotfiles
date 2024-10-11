@@ -163,6 +163,7 @@
     openssl
     p7zip
     plymouth
+    pulseaudio
     rustup
     tmux
     typora
