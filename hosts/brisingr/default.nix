@@ -12,12 +12,6 @@
     ];
 
   nixpkgs = {
-    overlays = [
-      (new: prev: {
-        brave = prev.brave.override {
-          commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=gnome";
-        };
-    })];
 
     config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
       "typora"

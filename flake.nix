@@ -28,6 +28,7 @@
 
           modules = [
             catppuccin.nixosModules.catppuccin
+            ./overlays
             ./hosts/brisingr
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;

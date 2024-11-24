@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, fetchFromGitHub, ... }:
 
 {
   programs.tmux = {
@@ -7,7 +7,15 @@
     plugins = with pkgs.tmuxPlugins; [
       {
         plugin = catppuccin;
-        extraConfig = "set -g @catppuccin_flavour 'mocha'";
+        extraConfig = ''
+          set -g @catppuccin_flavor "mocha"
+          set -ogq @catppuccin_window_status_style "basic"
+
+          set -g status-left ""
+          set -g status-right "#{E:@catppuccin_status_application}"
+
+          set -g @catppuccin_status_left_separator "█"
+        '';
       }
       sensible
       vim-tmux-navigator
@@ -15,6 +23,8 @@
 
     extraConfig = ''
       set -ga terminal-overrides ",alacritty:Tc"
+      set -g default-terminal "alacritty"
+
       unbind C-b
       set -g prefix C-Space
       bind C-Space send-prefix
