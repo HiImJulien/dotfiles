@@ -3,6 +3,9 @@
 {
   programs.alacritty = {
     enable = true;
+
+    catppuccin.enable = true;
+
     settings = {
       shell = {
         program = "${pkgs.zsh}/bin/zsh";
