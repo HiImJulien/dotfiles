@@ -7,12 +7,14 @@
     catppuccin.enable = true;
 
     settings = {
-      shell = {
-        program = "${pkgs.zsh}/bin/zsh";
-        args = [
-          "-c"
-          "tmux new-session -A -s main"
-        ];
+      terminal = {
+        shell = {
+          program = "${pkgs.zsh}/bin/zsh";
+          args = [
+            "-c"
+            "tmux new-session -A -s main"
+          ];
+        };
       };
     };
   };
