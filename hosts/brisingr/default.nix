@@ -136,7 +136,6 @@
   };
 
   security.polkit.enable = true;
-  sound.enable = true;
 
   # Upgrade lunacy version to the latest.
 
@@ -147,10 +146,10 @@
     file
     firefox
     git
-    gnome.gdm
-    gnome.gnome-keyring
-    gnome.mutter
-    gnome.seahorse
+    gdm
+    gnome-keyring
+    mutter
+    seahorse
     inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
     neovim
     nodejs_20
@@ -177,20 +176,20 @@
     gnome-text-editor
     gnome-tour
     gnome-user-docs
-    gnome.cheese
-    gnome.evince
-    gnome.geary
-    gnome.gnome-calculator
-    gnome.gnome-calendar
-    gnome.gnome-characters
-    gnome.gnome-clocks
-    gnome.gnome-contacts
-    gnome.gnome-maps
-    gnome.gnome-music
-    gnome.gnome-terminal
-    gnome.gnome-weather
-    gnome.totem
-    gnome.yelp
+    cheese
+    evince
+    geary
+    gnome-calculator
+    gnome-calendar
+    gnome-characters
+    gnome-clocks
+    gnome-contacts
+    gnome-maps
+    gnome-music
+    gnome-terminal
+    gnome-weather
+    totem
+    yelp
   ]);
 
   programs.hyprland = {
@@ -199,6 +198,6 @@
   };
 
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.11";
 }
 
