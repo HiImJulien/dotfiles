@@ -13,7 +13,7 @@
         "$mod, C, killactive"
         "$mod, M, exit"
         "$mod, V, togglefloating"
-        "$mod, R, exec, ags -t shell::launcher"
+        "$mod, R, exec, ags toggle shell::launcher"
 
         # Focus binds
         "$mod, H, movefocus, l"

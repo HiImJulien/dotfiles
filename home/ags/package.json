@@ -1,0 +1,26 @@
+{
+  "name": "kirsch-shell",
+  "private": true,
+  "author": "Julian Kirsch <contact@juliankirsch.me>",
+  "devDependencies": {
+    "@catppuccin/palette": "^1.7.1",
+    "prettier": "3.4.2"
+  },
+  "prettier": {
+    "experimentalTernaries": false,
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": false,
+    "quoteProps": "as-needed",
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "bracketSameLine": true,
+    "arrowParens": "always",
+    "proseWrap": "always",
+    "htmlWhitespaceSensitivity": "ignore",
+    "endOfLine": "lf",
+    "singleAttributePerLine": false
+  }
+}
