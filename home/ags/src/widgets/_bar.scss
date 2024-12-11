@@ -1,0 +1,29 @@
+@use "../colors";
+
+.bar {
+  color: colors.$text;
+
+  min-height: 32px;
+  background-color: colors.$crust;
+  border-bottom: solid 2px colors.$mantle;
+}
+
+.bar__ws {
+  margin-left: 16px;
+
+  &__item {
+    all: unset;
+
+    margin-left: 4px;
+    background-color: colors.$mantle;
+  }
+}
+
+.bar__time {
+}
+
+.bar__ctrl {
+  margin-right: 8px;
+  font-size: 20px;
+  color: colors.$text;
+}

@@ -17,6 +17,12 @@
       ],
       "@widgets/*": [
         "./src/widgets/*"
+      ],
+      "@widgets": [
+        "./src/widgets"
+      ],
+      "@components": [
+        "./src/components"
       ]
     }
   },

@@ -190,6 +190,7 @@
     gnome-weather
     totem
     yelp
+    rygel
   ]);
 
   programs.hyprland = {

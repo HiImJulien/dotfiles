@@ -48,7 +48,8 @@ const Launcher = () => {
       name={WINDOW_NAME}
       heightRequest={500}
       widthRequest={500}
-      onKeyPressEvent={onKeyPress}>
+      onKeyPressEvent={onKeyPress}
+      visible={false}>
       <scrollable>
         <box vertical>{applications.map(Application)}</box>
       </scrollable>
