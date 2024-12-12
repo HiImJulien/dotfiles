@@ -145,12 +145,12 @@
     fd
     file
     firefox
-    git
+    foliate
     gdm
+    git
     gnome-keyring
-    mutter
-    seahorse
     inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
+    mutter
     neovim
     nodejs_20
     openssl
@@ -158,6 +158,7 @@
     plymouth
     pulseaudio
     rustup
+    seahorse
     tmux
     typora
     unzip
