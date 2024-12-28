@@ -165,6 +165,7 @@
     wget
     wireplumber
     wl-clipboard
+    wofi
     zsh
   ];
 

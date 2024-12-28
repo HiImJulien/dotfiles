@@ -10,7 +10,11 @@
   };
 
   home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [
+      "JetBrainsMono"
+      "Iosevka"
+    ];
+    })
   ];
 
   home.sessionPath = [
@@ -36,6 +40,8 @@
     enable = false;
     flavor = "mocha";
     accent = "red";
+
+    cursors.enable = true;
   };
 
   xdg.enable = true;

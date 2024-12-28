@@ -3,10 +3,15 @@
 {
   programs.alacritty = {
     enable = true;
-
     catppuccin.enable = true;
 
     settings = {
+      font = {
+        normal.family = "Iosevka NFM";
+        bold.family = "Iosevka NFM";
+        italic.family = "Iosevka NFM";
+      };
+
       terminal = {
         shell = {
           program = "${pkgs.zsh}/bin/zsh";
