@@ -34,6 +34,7 @@ in
       nvim-lspconfig
       nvim-notify
       nvim-treesitter.withAllGrammars
+      pest-vim
       plenary-nvim
       startup-nvim
       telescope-file-browser-nvim
