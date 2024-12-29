@@ -2,20 +2,19 @@
   description = "System configuration by @HiImJulian";
 
   inputs = {
-    ags.url = "github:aylur/ags";
     catppuccin.url = "github:catppuccin/nix";
-
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "github:hyprwm/hyprland";
     hyprpaper.url = "github:hyprwm/hyprpaper";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     nixpkgs.url = "nixpkgs/nixos-24.11";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, hyprland, catppuccin, ... }:
+  outputs = { self, nixpkgs, home-manager, hyprland, catppuccin, ... }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -35,6 +34,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.kirsch = import ./home;
               home-manager.extraSpecialArgs = { inherit inputs; };
+              nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
             }
           ];
         };

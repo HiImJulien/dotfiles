@@ -8,7 +8,8 @@ let
 in
 {
   services.hyprpaper = {
-    enable = true;
+    # enable = true;
+    enable = false;
     settings = {
       ipc = "on";
       preload = [

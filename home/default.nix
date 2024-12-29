@@ -24,7 +24,6 @@
   imports = [
     inputs.catppuccin.homeManagerModules.catppuccin
 
-    ./ags
     ./alacritty
     ./direnv
     ./git

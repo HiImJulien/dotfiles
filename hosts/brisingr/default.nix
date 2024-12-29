@@ -167,6 +167,7 @@
     wl-clipboard
     wofi
     zsh
+    hyprpanel
   ];
 
 

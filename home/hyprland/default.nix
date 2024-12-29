@@ -53,8 +53,8 @@
 
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "ags run"
-        "hyprpaper"
+        "${pkgs.hyprpanel}/bin/hyprpanel"
+        # "hyprpaper"
       ];
 
       monitor = [
