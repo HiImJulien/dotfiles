@@ -32,7 +32,6 @@ function M.configure()
     lspconfig.tsserver.setup(opts)
     lspconfig.eslint.setup(opts)
 
-
     lspconfig.jsonls.setup({
         -- It has a different name on nixOS.
         -- cmd = { "vscode-json-languageserver", "--stdio" },
@@ -45,6 +44,21 @@ function M.configure()
             },
         },
     })
+
+    -- Disable since this is handled by lsp_lines.
+    -- Must be configured after lspconfig.
+    vim.diagnostic.config({
+        virtual_text = false,
+    })
+
+    vim.keymap.set(
+        "",
+        "<Leader>l",
+        require("lsp_lines").toggle,
+        { desc = "Toggle diagnostic lines" }
+    )
+
+    require("lsp_lines").setup()
 end
 
 return M

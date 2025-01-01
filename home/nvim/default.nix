@@ -25,6 +25,7 @@ in
       cmp-nvim-lsp
       cmp_luasnip
       friendly-snippets
+      lsp_lines-nvim
       luasnip
       noice-nvim
       none-ls-nvim
