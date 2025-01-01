@@ -758,6 +758,22 @@
         "type": "indirect"
       }
     },
+    "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1735471104,
+        "narHash": "sha256-0q9NGQySwDQc7RhAV2ukfnu7Gxa5/ybJ2ANT8DQrQrs=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "88195a94f390381c6afcdaa933c2f6ff93959cb4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nuscht-search": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -812,7 +828,8 @@
         "hyprland": "hyprland",
         "hyprpanel": "hyprpanel",
         "hyprpaper": "hyprpaper",
-        "nixpkgs": "nixpkgs_5"
+        "nixpkgs": "nixpkgs_5",
+        "zen-browser": "zen-browser"
       }
     },
     "systems": {
@@ -898,6 +915,24 @@
       "original": {
         "owner": "hyprwm",
         "repo": "xdg-desktop-portal-hyprland",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "lastModified": 1735744680,
+        "narHash": "sha256-I+rzz+fBailFk0rxmffZ6RTi99A6R73jw6aMN9VEl00=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "121ee7b8171037e0a25c9e90a04571052e9f769a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }

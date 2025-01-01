@@ -150,6 +150,7 @@
     git
     gnome-keyring
     inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
+    inputs.zen-browser.packages.${pkgs.system}.default
     mutter
     neovim
     nodejs_20

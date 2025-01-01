@@ -12,6 +12,8 @@
     hyprpaper.url = "github:hyprwm/hyprpaper";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     nixpkgs.url = "nixpkgs/nixos-24.11";
+
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, catppuccin, ... }@inputs:
