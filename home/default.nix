@@ -1,5 +1,9 @@
 { config, inputs, pkgs, self, catppuccin, ... }:
 
+let
+  cargo_home = "$HOME/.local/share/cargo";
+  go_path = "$HOME/.local/share/go";
+in
 {
   programs.home-manager.enable = true;
 
@@ -18,8 +22,13 @@
   ];
 
   home.sessionPath = [
-    "$HOME/.cargo/bin"
+    (cargo_home + "/bin")
   ];
+
+  home.sessionVariables = {
+    CARGO_HOME = cargo_home;
+    GOPATH = go_path;
+  };
 
   imports = [
     inputs.catppuccin.homeManagerModules.catppuccin

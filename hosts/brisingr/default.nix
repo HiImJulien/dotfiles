@@ -16,6 +16,14 @@
     config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
       "typora"
       "intelephense"
+
+
+      "steam"
+      "steam-original"
+      "steam-unwrapped"
+      "steam-run"
+
+      "discord"
     ];
   };
 
@@ -142,6 +150,7 @@
   environment.systemPackages = with pkgs; [
     alacritty
     brave
+    discord
     fd
     file
     firefox
@@ -149,6 +158,7 @@
     gdm
     git
     gnome-keyring
+    hyprpanel
     inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
     inputs.zen-browser.packages.${pkgs.system}.default
     mutter
@@ -160,6 +170,7 @@
     pulseaudio
     rustup
     seahorse
+    steam
     tmux
     typora
     unzip
@@ -168,7 +179,6 @@
     wl-clipboard
     wofi
     zsh
-    hyprpanel
   ];
 
 
@@ -202,6 +212,24 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
+
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+
+    amdgpu.amdvlk = {
+      enable = true;
+      support32Bit.enable = true;
+    };
+  };
 
   system.stateVersion = "24.11";
 }
