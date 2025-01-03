@@ -154,7 +154,6 @@
     discord
     fd
     file
-    firefox
     foliate
     gdm
     git
@@ -164,7 +163,6 @@
     inputs.zen-browser.packages.${pkgs.system}.default
     mutter
     neovim
-    nodejs_20
     openssl
     p7zip
     plymouth
@@ -182,7 +180,6 @@
     wofi
     zsh
   ];
-
 
   # Debloat GNOME
   environment.gnome.excludePackages = (with pkgs; [
