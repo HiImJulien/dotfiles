@@ -24,6 +24,7 @@
       "steam-run"
 
       "discord"
+      "teamspeak3"
     ];
   };
 
@@ -171,6 +172,7 @@
     rustup
     seahorse
     steam
+    teamspeak3
     tmux
     typora
     unzip
