@@ -165,6 +165,7 @@
     neovim
     openssl
     p7zip
+    playerctl
     plymouth
     pulseaudio
     rustup

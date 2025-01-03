@@ -28,7 +28,6 @@
         # Scroll through workspaces
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
-
       ] ++ (
         # Generate goto / move to workspace binds
         builtins.concatLists (builtins.genList (
@@ -51,6 +50,22 @@
         "$mod, mouse:273, resizewindow"
       ];
 
+      bindl = [
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPrev, exec, playerctl previous"
+
+        # Some headphones track whether they're playing or pausing
+        # thus sending different events.
+        ", XF86AudioPlay, exec, playerctl play"
+        ", XF86AudioPause, exec, playerctl pause"
+      ];
+
+      bindle = [
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ];
+
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "${pkgs.hyprpanel}/bin/hyprpanel"
@@ -59,7 +74,7 @@
 
       monitor = [
         "DP-1,1920x1080@75,0x0,1,bitdepth,10"
-        "DP-2,1920x1080@144,1920x0,1,bitdepth,8"
+        "DP-2,1920x1080@144,1920x0,1,bitdepth,10"
       ];
 
       input = {
