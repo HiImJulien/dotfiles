@@ -8,8 +8,7 @@ let
 in
 {
   services.hyprpaper = {
-    # enable = true;
-    enable = false;
+    enable = true;
     settings = {
       ipc = "on";
       preload = [
@@ -17,8 +16,7 @@ in
       ];
 
       wallpaper = [
-        "DP-1,${builtins.toString wallpaper}"
-        "DP-2,${builtins.toString wallpaper}"
+        ",${builtins.toString wallpaper}"
       ];
     };
   };
