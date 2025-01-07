@@ -129,7 +129,6 @@
 
   environment.systemPackages = with pkgs; [
     alacritty
-    brave
     fd
     file
     foliate

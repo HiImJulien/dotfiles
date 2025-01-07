@@ -4,6 +4,7 @@
   nixpkgs.overlays = [
 
     # Configure brave to support Wayland and use Gnome's password store.
+    # Currently unused. Left for future reference.
     (new: prev: {
       brave = prev.brave.override {
         commandLineArgs = lib.concatStrings [
