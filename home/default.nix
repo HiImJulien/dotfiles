@@ -49,7 +49,9 @@ in
     flavor = "mocha";
     accent = "red";
 
+    alacritty.enable = true;
     cursors.enable = true;
+    hyprland.enable = true;
   };
 
   xdg.enable = true;

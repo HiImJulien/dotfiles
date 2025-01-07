@@ -34,22 +34,10 @@
         device = "nodev";
         efiSupport = true;
         useOSProber = true;
-
-        catppuccin = {
-          enable = true;
-          flavor = "mocha";
-        };
       };
     };
 
-    plymouth = {
-      enable = true;
-      catppuccin = {
-        enable = true;
-        flavor = "mocha";
-      };
-    };
-
+    plymouth.enable = true;
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   };
 
@@ -209,6 +197,22 @@
     amdgpu.amdvlk = {
       enable = true;
       support32Bit.enable = true;
+    };
+  };
+
+  catppuccin = {
+    enable = false;
+    flavor = "mocha";
+    accent = "red";
+
+    grub = {
+      enable = true;
+      flavor = "mocha";
+    };
+
+    plymouth = {
+      enable = true;
+      flavor = "mocha";
     };
   };
 
