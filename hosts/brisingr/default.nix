@@ -62,7 +62,7 @@
 
       settings = {
         General = {
-          ControllerMode = "bredr";
+          ControllerMode = "dual";
           Experimental = true;
         };
       };
@@ -119,6 +119,11 @@
           "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
         };
       };
+    };
+
+    solaar = {
+      enable = true;
+      package = pkgs.solaar;
     };
   };
 

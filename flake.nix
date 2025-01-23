@@ -14,6 +14,11 @@
     nixpkgs.url = "nixpkgs/nixos-24.11";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    solaar = {
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, catppuccin, ... }@inputs:
@@ -29,6 +34,7 @@
 
           modules = [
             catppuccin.nixosModules.catppuccin
+            inputs.solaar.nixosModules.default
             ./overlays
             ./hosts/brisingr
             home-manager.nixosModules.home-manager {
