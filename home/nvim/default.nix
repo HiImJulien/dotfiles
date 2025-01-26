@@ -61,6 +61,8 @@ in
       rust-analyzer
       stylua
       tailwindcss-language-server
+      typstyle
+      tinymist
     ];
   };
 

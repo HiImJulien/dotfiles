@@ -31,6 +31,7 @@ function M.configure()
     lspconfig.tailwindcss.setup(opts)
     lspconfig.tsserver.setup(opts)
     lspconfig.eslint.setup(opts)
+    lspconfig.tinymist.setup(opts)
 
     lspconfig.jsonls.setup({
         -- It has a different name on nixOS.

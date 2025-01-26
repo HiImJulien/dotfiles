@@ -139,8 +139,6 @@
 
   security.polkit.enable = true;
 
-  # Upgrade lunacy version to the latest.
-
   environment.systemPackages = with pkgs; [
     alacritty
     discord
@@ -166,6 +164,7 @@
     teamspeak3
     tmux
     typora
+    typst
     unzip
     wget
     wireplumber
