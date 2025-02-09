@@ -171,6 +171,8 @@
     wl-clipboard
     wofi
     zsh
+    pop
+    gum
   ];
 
   # Debloat GNOME
