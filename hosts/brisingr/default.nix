@@ -138,15 +138,18 @@
     gdm
     git
     gnome-keyring
+    gum
     hyprpanel
     inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
     inputs.zen-browser.packages.${pkgs.system}.default
     mutter
     neovim
+    obs-studio
     openssl
     p7zip
     playerctl
     plymouth
+    pop
     pulseaudio
     rustup
     seahorse
@@ -159,8 +162,6 @@
     wl-clipboard
     wofi
     zsh
-    pop
-    gum
   ];
 
   # Debloat GNOME
