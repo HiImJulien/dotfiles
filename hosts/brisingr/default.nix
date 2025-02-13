@@ -16,15 +16,6 @@
     config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
       "typora"
       "intelephense"
-
-
-      "steam"
-      "steam-original"
-      "steam-unwrapped"
-      "steam-run"
-
-      "discord"
-      "teamspeak3"
     ];
   };
 
@@ -141,7 +132,6 @@
 
   environment.systemPackages = with pkgs; [
     alacritty
-    discord
     fd
     file
     foliate
@@ -160,8 +150,6 @@
     pulseaudio
     rustup
     seahorse
-    steam
-    teamspeak3
     tmux
     typora
     typst
@@ -205,13 +193,6 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    localNetworkGameTransfers.openFirewall = true;
-  };
-
   programs.gamemode.enable = true;
 
   hardware = {
@@ -219,11 +200,6 @@
       enable = true;
       enable32Bit = true;
     };
-
-    #amdgpu.amdvlk = {
-    #  enable = true;
-    #  support32Bit.enable = true;
-    #};
   };
 
   catppuccin = {
