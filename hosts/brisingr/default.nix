@@ -157,6 +157,7 @@
     typora
     typst
     unzip
+    vlc
     wget
     wireplumber
     wl-clipboard
