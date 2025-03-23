@@ -1,10 +1,14 @@
-{ config, inputs, pkgs, self, catppuccin, ... }:
-
-let
+{
+  config,
+  inputs,
+  pkgs,
+  self,
+  catppuccin,
+  ...
+}: let
   cargo_home = "$HOME/.local/share/cargo";
   go_path = "$HOME/.local/share/go";
-in
-{
+in {
   programs.home-manager.enable = true;
 
   home = {
@@ -14,10 +18,11 @@ in
   };
 
   home.packages = [
-    (pkgs.nerdfonts.override { fonts = [
-      "JetBrainsMono"
-      "Iosevka"
-    ];
+    (pkgs.nerdfonts.override {
+      fonts = [
+        "JetBrainsMono"
+        "Iosevka"
+      ];
     })
   ];
 
@@ -56,4 +61,3 @@ in
 
   xdg.enable = true;
 }
-

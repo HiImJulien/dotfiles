@@ -1,17 +1,21 @@
-{ config, lib, pkgs, super, ... }:
-
-let
-  fromGitHub = owner: repo: rev: hash: pkgs.vimUtils.buildVimPlugin {
-    name = repo;
-    src = pkgs.fetchFromGitHub {
-      inherit owner;
-      inherit repo;
-      inherit rev;
-      inherit hash;
-    };
-  };
-in
 {
+  config,
+  lib,
+  pkgs,
+  super,
+  ...
+}: let
+  fromGitHub = owner: repo: rev: hash:
+    pkgs.vimUtils.buildVimPlugin {
+      name = repo;
+      src = pkgs.fetchFromGitHub {
+        inherit owner;
+        inherit repo;
+        inherit rev;
+        inherit hash;
+      };
+    };
+in {
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -80,5 +84,4 @@ in
     source = ./ftdetect;
     recursive = true;
   };
-
 }

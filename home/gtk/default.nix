@@ -1,6 +1,10 @@
-{ config, inputs, pkgs, self, ... }:
-
 {
+  config,
+  inputs,
+  pkgs,
+  self,
+  ...
+}: {
   gtk = {
     enable = true;
 

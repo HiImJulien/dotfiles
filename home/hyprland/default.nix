@@ -1,47 +1,54 @@
-{ config, lib, pkgs, super, hyprland, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  super,
+  hyprland,
+  ...
+}: {
   wayland.windowManager.hyprland = {
     enable = true;
 
     settings = {
       "$mod" = "SUPER";
-      bind = [
-        # Action binds
-        "$mod, Q, exec, alacritty"
-        "$mod, C, killactive"
-        "$mod, M, exit"
-        "$mod, V, togglefloating"
-        "$mod, R, exec, wofi --show drun"
+      bind =
+        [
+          # Action binds
+          "$mod, Q, exec, alacritty"
+          "$mod, C, killactive"
+          "$mod, M, exit"
+          "$mod, V, togglefloating"
+          "$mod, R, exec, wofi --show drun"
 
-        # Focus binds
-        "$mod, H, movefocus, l"
-        "$mod, L, movefocus, r"
-        "$mod, J, movefocus, d"
-        "$mod, K, movefocus, u"
+          # Focus binds
+          "$mod, H, movefocus, l"
+          "$mod, L, movefocus, r"
+          "$mod, J, movefocus, d"
+          "$mod, K, movefocus, u"
 
-        # Special Workspace
-        "$mod, S, togglespecialworkspace, magic"
-        "$mod SHIFT, S, movetoworkspace, special:magic"
+          # Special Workspace
+          "$mod, S, togglespecialworkspace, magic"
+          "$mod SHIFT, S, movetoworkspace, special:magic"
 
-        # Scroll through workspaces
-        "$mod, mouse_down, workspace, e+1"
-        "$mod, mouse_up, workspace, e-1"
-      ] ++ (
-        # Generate goto / move to workspace binds
-        builtins.concatLists (builtins.genList (
-            x: let
-              ws = let
-                c = (x + 1) / 10;
-              in
-                builtins.toString (x + 1 - (c * 10));
-            in [
-              "$mod, ${ws}, workspace, ${toString (x + 1)}"
-              "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-            ]
-          )
-        9)
-      );
+          # Scroll through workspaces
+          "$mod, mouse_down, workspace, e+1"
+          "$mod, mouse_up, workspace, e-1"
+        ]
+        ++ (
+          # Generate goto / move to workspace binds
+          builtins.concatLists (builtins.genList (
+              x: let
+                ws = let
+                  c = (x + 1) / 10;
+                in
+                  builtins.toString (x + 1 - (c * 10));
+              in [
+                "$mod, ${ws}, workspace, ${toString (x + 1)}"
+                "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+              ]
+            )
+            9)
+        );
 
       bindm = [
         # Resize windows
@@ -123,7 +130,6 @@
           "workspaces, 1, 6, default"
         ];
       };
-
     };
   };
 }

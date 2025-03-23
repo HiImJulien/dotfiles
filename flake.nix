@@ -21,31 +21,40 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, catppuccin, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs = import nixpkgs { inherit system; };
-    in {
-      nixosConfigurations = {
-        brisingr = lib.nixosSystem {
-          inherit system;
-          specialArgs.inputs = inputs;
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    hyprland,
+    catppuccin,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    lib = nixpkgs.lib;
+    pkgs = import nixpkgs {inherit system;};
+  in {
+    nixosConfigurations = {
+      brisingr = lib.nixosSystem {
+        inherit system;
+        specialArgs.inputs = inputs;
 
-          modules = [
-            catppuccin.nixosModules.catppuccin
-            inputs.solaar.nixosModules.default
-            ./overlays
-            ./hosts/brisingr
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.kirsch = import ./home;
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
-            }
-          ];
-        };
+        modules = [
+          catppuccin.nixosModules.catppuccin
+          inputs.solaar.nixosModules.default
+          ./overlays
+          ./hosts/brisingr
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.kirsch = import ./home;
+            home-manager.extraSpecialArgs = {inherit inputs;};
+            nixpkgs.overlays = [inputs.hyprpanel.overlay];
+          }
+        ];
       };
+    };
+
+    formatter.${system} = pkgs.alejandra;
   };
 }

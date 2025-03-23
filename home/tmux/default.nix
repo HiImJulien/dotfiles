@@ -1,6 +1,10 @@
-{ config, lib, pkgs, fetchFromGitHub, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  fetchFromGitHub,
+  ...
+}: {
   programs.tmux = {
     enable = true;
     terminal = "alacritty";
@@ -40,7 +44,5 @@
       bind % split-window -h -c "#{pane_current_path}"
       bind c new-window -c "#{pane_current_path}"
     '';
-
   };
 }
-

@@ -1,6 +1,10 @@
-{ config, lib, pkgs, super, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  super,
+  ...
+}: {
   programs = {
     direnv = {
       enable = true;
