@@ -3,12 +3,13 @@
   lib,
   pkgs,
   super,
+  unstable,
   ...
 }: let
   fromGitHub = owner: repo: rev: hash:
-    pkgs.vimUtils.buildVimPlugin {
+    unstable.vimUtils.buildVimPlugin {
       name = repo;
-      src = pkgs.fetchFromGitHub {
+      src = unstable.fetchFromGitHub {
         inherit owner;
         inherit repo;
         inherit rev;
@@ -17,13 +18,15 @@
     };
 in {
   programs.neovim = {
+    package = unstable.neovim-unwrapped;
+
     enable = true;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
     defaultEditor = true;
 
-    plugins = with pkgs.vimPlugins; [
+    plugins = with unstable.vimPlugins; [
       SchemaStore-nvim
       catppuccin-nvim
       cmp-nvim-lsp
@@ -49,7 +52,7 @@ in {
     ];
 
     extraLuaConfig = builtins.readFile ./init.lua;
-    extraPackages = with pkgs; [
+    extraPackages = with unstable; [
       black
       fd
       fzf
@@ -59,7 +62,7 @@ in {
       nodePackages_latest.svelte-language-server
       nodePackages_latest.typescript-language-server
       vscode-langservers-extracted
-      nodePackages_latest.intelephense
+      # nodePackages_latest.intelephense
       pyright
       ripgrep
       rust-analyzer

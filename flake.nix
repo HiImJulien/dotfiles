@@ -8,10 +8,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    home-manager-unstable = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     hyprland.url = "github:hyprwm/hyprland";
     hyprpaper.url = "github:hyprwm/hyprpaper";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
@@ -24,6 +30,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
     hyprland,
     catppuccin,
@@ -36,7 +43,12 @@
     nixosConfigurations = {
       brisingr = lib.nixosSystem {
         inherit system;
-        specialArgs.inputs = inputs;
+        specialArgs = {
+          inputs = inputs;
+          unstable = import nixpkgs-unstable {
+            inherit system;
+          };
+        };
 
         modules = [
           catppuccin.nixosModules.catppuccin
@@ -48,7 +60,12 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.kirsch = import ./home;
-            home-manager.extraSpecialArgs = {inherit inputs;};
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              unstable = import nixpkgs-unstable {
+                inherit system;
+              };
+            };
             nixpkgs.overlays = [inputs.hyprpanel.overlay];
           }
         ];
