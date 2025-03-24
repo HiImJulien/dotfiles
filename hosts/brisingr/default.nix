@@ -141,20 +141,16 @@
     gdm
     git
     gnome-keyring
-    gum
     hyprpanel
     inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
     inputs.zen-browser.packages.${pkgs.system}.default
-    mutter
     neovim
     obs-studio
     openssl
     p7zip
     playerctl
     plymouth
-    pop
     pulseaudio
-    rustup
     seahorse
     tmux
     typora
