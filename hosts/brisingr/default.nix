@@ -135,6 +135,7 @@
 
   environment.systemPackages = with pkgs; [
     alacritty
+    blender
     fd
     file
     foliate
@@ -144,6 +145,7 @@
     hyprpanel
     inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
     inputs.zen-browser.packages.${pkgs.system}.default
+    multipass
     neovim
     obs-studio
     openssl
@@ -220,4 +222,6 @@
   };
 
   system.stateVersion = "24.11";
+
+  virtualisation.multipass.enable = true;
 }
