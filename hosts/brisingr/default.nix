@@ -163,7 +163,6 @@
     hyprpanel
     inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
     inputs.zen-browser.packages.${pkgs.system}.default
-    multipass
     neovim
     obs-studio
     openssl
