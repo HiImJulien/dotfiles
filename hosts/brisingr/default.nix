@@ -119,11 +119,29 @@
       enable = true;
       package = pkgs.solaar;
     };
+
+    coredns = {
+      enable = true;
+      config = ''
+        . {
+          # Cloudflare and Google
+          forward . 1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4
+          cache
+        }
+
+        local {
+          template IN A  {
+              answer "{{ .Name }} 0 IN A 127.0.0.1"
+          }
+        }
+      '';
+    };
   };
 
   networking = {
     hostName = "brisingr";
     networkmanager.enable = true;
+    networkmanager.insertNameservers = ["127.0.0.1"];
 
     nameservers = [
       "1.1.1.1"
