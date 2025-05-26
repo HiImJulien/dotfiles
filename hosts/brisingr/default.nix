@@ -45,11 +45,6 @@
   };
 
   hardware = {
-    pulseaudio = {
-      enable = false;
-      package = pkgs.pulseaudioFull;
-    };
-
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -83,6 +78,11 @@
     blueman.enable = true;
     gnome.gnome-keyring.enable = true;
 
+    pulseaudio = {
+      enable = false;
+      package = pkgs.pulseaudioFull;
+    };
+
     xserver = {
       enable = true;
       xkb.layout = "de";
@@ -115,10 +115,10 @@
       };
     };
 
-    solaar = {
-      enable = true;
-      package = pkgs.solaar;
-    };
+    #solaar = {
+    #  enable = true;
+    #  package = pkgs.solaar;
+    #};
 
     coredns = {
       enable = true;
@@ -171,6 +171,7 @@
     plymouth
     pulseaudio
     seahorse
+    solaar
     tmux
     typora
     typst
@@ -220,6 +221,8 @@
       enable = true;
       enable32Bit = true;
     };
+
+    logitech.wireless.enable = true;
   };
 
   catppuccin = {
@@ -239,6 +242,4 @@
   };
 
   system.stateVersion = "24.11";
-
-  virtualisation.multipass.enable = true;
 }

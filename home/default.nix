@@ -18,12 +18,8 @@ in {
   };
 
   home.packages = [
-    (pkgs.nerdfonts.override {
-      fonts = [
-        "JetBrainsMono"
-        "Iosevka"
-      ];
-    })
+    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.iosevka
   ];
 
   home.sessionPath = [
@@ -36,7 +32,7 @@ in {
   };
 
   imports = [
-    inputs.catppuccin.homeManagerModules.catppuccin
+    inputs.catppuccin.homeModules.catppuccin
 
     ./alacritty
     ./direnv

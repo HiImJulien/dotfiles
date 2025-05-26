@@ -53,19 +53,15 @@ in {
 
     extraLuaConfig = builtins.readFile ./init.lua;
     extraPackages = with unstable; [
-      black
       fd
       fzf
-      gopls
       lua-language-server
       nodePackages_latest."@astrojs/language-server"
       nodePackages_latest.svelte-language-server
       nodePackages_latest.typescript-language-server
       vscode-langservers-extracted
-      # nodePackages_latest.intelephense
       pyright
       ripgrep
-      rust-analyzer
       stylua
       tailwindcss-language-server
       typstyle

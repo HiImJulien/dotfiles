@@ -4,7 +4,7 @@
   inputs = {
     catppuccin.url = "github:catppuccin/nix";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -16,15 +16,10 @@
     hyprland.url = "github:hyprwm/hyprland";
     hyprpaper.url = "github:hyprwm/hyprpaper";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-
-    solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -52,7 +47,6 @@
 
         modules = [
           catppuccin.nixosModules.catppuccin
-          inputs.solaar.nixosModules.default
           ./overlays
           ./hosts/brisingr
           home-manager.nixosModules.home-manager
