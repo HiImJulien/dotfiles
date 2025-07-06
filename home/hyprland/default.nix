@@ -74,7 +74,7 @@
 
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "${pkgs.hyprpanel}/bin/hyprpanel"
+        # "${pkgs.hyprpanel}/bin/hyprpanel"
         "hyprpaper"
       ];
 

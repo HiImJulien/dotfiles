@@ -17,9 +17,9 @@ in {
     stateVersion = "24.11";
   };
 
-  home.packages = [
-    pkgs.nerd-fonts.jetbrains-mono
-    pkgs.nerd-fonts.iosevka
+  home.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.iosevka
   ];
 
   home.sessionPath = [
@@ -39,6 +39,7 @@ in {
     ./git
     ./gtk
     ./hyprland
+    ./hyprpanel
     ./hyprpaper
     ./nvim
     ./tmux
