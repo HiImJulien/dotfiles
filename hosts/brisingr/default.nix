@@ -160,7 +160,6 @@
     gdm
     git
     gnome-keyring
-    # hyprpanel
     inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
     inputs.zen-browser.packages.${pkgs.system}.default
     neovim

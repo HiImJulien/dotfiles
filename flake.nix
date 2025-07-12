@@ -15,7 +15,6 @@
 
     hyprland.url = "github:hyprwm/hyprland";
     hyprpaper.url = "github:hyprwm/hyprpaper";
-    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 

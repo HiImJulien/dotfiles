@@ -39,7 +39,6 @@ in {
     ./git
     ./gtk
     ./hyprland
-    ./hyprpanel
     ./hyprpaper
     ./nvim
     ./tmux
