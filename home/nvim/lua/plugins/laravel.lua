@@ -12,7 +12,10 @@ function M.configure()
     laravel.setup({
         notifications = true,
         debug = false,
-        keympas = true,
+        keymaps = true,
+        sail = {
+            enabled = false,
+        }
     })
 end
 
