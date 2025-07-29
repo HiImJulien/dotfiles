@@ -181,6 +181,7 @@
     wl-clipboard
     wofi
     zsh
+    devenv
   ];
 
   # Debloat GNOME
