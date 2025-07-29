@@ -6,7 +6,12 @@
   unstable,
   ...
 }: let
-  fromGitHub = owner: repo: rev: hash:
+  fromGitHub = {
+    owner,
+    repo,
+    rev,
+    hash,
+  }:
     unstable.vimUtils.buildVimPlugin {
       name = repo;
       src = unstable.fetchFromGitHub {
@@ -49,6 +54,13 @@ in {
       telescope-nvim
       telescope-ui-select-nvim
       vim-tmux-navigator
+
+      (fromGitHub {
+        owner = "adibhanna";
+        repo = "laravel.nvim";
+        rev = "623a22de1a54bd6e96839cef1845ffaaf3a1eed1";
+        hash = "sha256-2XhCGU8qTk10nBZB+ESPhfso5bsSqo9i2Nda2h+3f90=";
+      })
     ];
 
     extraLuaConfig = builtins.readFile ./init.lua;

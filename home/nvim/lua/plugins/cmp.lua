@@ -27,6 +27,7 @@ function M.configure()
             ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
+            { name = "laravel" },
             { name = "nvim_lsp" },
             { name = "luasnip" },
         }, {
