@@ -154,6 +154,8 @@
   environment.systemPackages = with pkgs; [
     alacritty
     blender
+    chromium
+    devenv
     fd
     file
     foliate
@@ -181,7 +183,6 @@
     wl-clipboard
     wofi
     zsh
-    devenv
   ];
 
   # Debloat GNOME
