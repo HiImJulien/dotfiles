@@ -105,7 +105,11 @@
       alsa.support32Bit = true;
       pulse.enable = true;
 
+
       wireplumber.extraConfig = {
+        "wireplumber.settings" = {
+          "bluetooth.autoswitch-to-headset-profile" = false;
+        };
         "monitor.bluez.properties" = {
           "bluez5.enable-sbc-xq" = true;
           "bluez5.enable-msbc" = true;
