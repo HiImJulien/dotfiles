@@ -2,7 +2,7 @@
   description = "System configuration by @HiImJulian";
 
   inputs = {
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:catppuccin/nix/v25.05";
 
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
