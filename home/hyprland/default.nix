@@ -74,7 +74,8 @@
 
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "hyprpaper"
+        # "hyprpaper"
+        "caelestia-shell -d"
       ];
 
       monitor = [
