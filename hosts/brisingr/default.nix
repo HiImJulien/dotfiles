@@ -168,7 +168,6 @@
     gnome-keyring
     inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
     inputs.zen-browser.packages.${pkgs.system}.default
-    inputs.caelestia-shell.packages.${pkgs.system}.with-cli
     neovim
     obs-studio
     openssl

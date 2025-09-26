@@ -4,6 +4,7 @@
   pkgs,
   super,
   hyprland,
+  inputs,
   ...
 }: {
   wayland.windowManager.hyprland = {
@@ -18,7 +19,8 @@
           "$mod, C, killactive"
           "$mod, M, exit"
           "$mod, V, togglefloating"
-          "$mod, R, exec, wofi --show drun"
+          # "$mod, R, exec, wofi --show drun"
+          "$mod, SPACE, exec, caelestia shell drawers toggle launcher"
 
           # Focus binds
           "$mod, H, movefocus, l"
@@ -74,8 +76,7 @@
 
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        # "hyprpaper"
-        "caelestia-shell -d"
+        # "${inputs.caelestia-shell.packages.${pkgs.system}.default}/bin/caelestia-shell -d"
       ];
 
       monitor = [

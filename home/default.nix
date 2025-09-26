@@ -33,8 +33,10 @@ in {
 
   imports = [
     inputs.catppuccin.homeModules.catppuccin
+    inputs.caelestia-shell.homeManagerModules.default
 
     ./alacritty
+    ./caelestia
     ./direnv
     ./git
     ./gtk
