@@ -15,7 +15,17 @@
 
     settings = {
       bar.status = {
-        showBattery = false;
+        showBattery = true;
+      };
+
+      services = {
+        useFahrenheit = false;
+      };
+
+      osd = {
+        enabled = true;
+        enableBrightness = false;
+        enableMicrophone = true;
       };
 
       launcher.enable = true;
@@ -23,7 +33,6 @@
 
     cli = {
       enable = true;
-
 
       settings = {
         theme.enableGtk = true;
