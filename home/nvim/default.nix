@@ -41,15 +41,16 @@ in {
       luasnip
       noice-nvim
       none-ls-nvim
-      none-ls-nvim
       nvim-cmp
       nvim-dbee
       nvim-lspconfig
       nvim-notify
+      lazydev-nvim
       nvim-treesitter.withAllGrammars
       pest-vim
       plenary-nvim
       startup-nvim
+      blink-cmp
       telescope-file-browser-nvim
       telescope-nvim
       telescope-ui-select-nvim
