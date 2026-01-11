@@ -56,6 +56,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.kirsch = import ./home;
+            home-manager.backupFileExtension = "bkp";
             home-manager.extraSpecialArgs = {
               inherit inputs;
               unstable = import nixpkgs-unstable {
