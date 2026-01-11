@@ -9,14 +9,17 @@ local function load_plugin(name)
     plugin.configure()
 end
 
+-- Not really used lately:
 -- load_plugin("startup")
+-- load_plugin("dbee")
+-- load_plugin("laravel")
 
 load_plugin("blink")
 load_plugin("catppuccin")
-load_plugin("dbee")
-load_plugin("lspconfig")
 load_plugin("noice")
 load_plugin("none-ls")
 load_plugin("telescope")
-load_plugin("treesitter")
--- load_plugin("laravel")
+
+-- API seems to have changed.
+-- load_plugin("treesitter")
+-- load_plugin("lspconfig")
