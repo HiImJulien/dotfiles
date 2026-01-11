@@ -25,11 +25,6 @@
       ];
   };
 
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
-
   boot = {
     loader = {
       efi.canTouchEfiVariables = false;
@@ -110,7 +105,6 @@
       alsa.support32Bit = true;
       pulse.enable = true;
 
-
       wireplumber.extraConfig = {
         "wireplumber.settings" = {
           "bluetooth.autoswitch-to-headset-profile" = false;
@@ -171,9 +165,9 @@
     gdm
     git
     gnome-keyring
-    inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
     inputs.zen-browser.packages.${pkgs.system}.default
     neovim
+    niri
     obs-studio
     openssl
     p7zip
@@ -220,9 +214,8 @@
     rygel
   ];
 
-  programs.hyprland = {
+  programs.niri = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
   programs.dankMaterialShell = {
@@ -235,7 +228,7 @@
 
     greeter = {
       compositor = {
-        name = "hyprland";
+        name = "niri";
       };
 
       logs = {

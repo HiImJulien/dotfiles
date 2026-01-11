@@ -38,8 +38,7 @@ in {
     ./direnv
     ./git
     ./gtk
-    ./hyprland
-    ./hyprpaper
+    ./niri
     ./nvim
     ./tmux
     ./zsh

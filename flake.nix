@@ -19,9 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-
-    hyprland.url = "github:hyprwm/hyprland";
-    hyprpaper.url = "github:hyprwm/hyprpaper";
     nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
@@ -33,7 +30,6 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    hyprland,
     catppuccin,
     ...
   } @ inputs: let
