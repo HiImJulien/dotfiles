@@ -19,7 +19,6 @@
   nixpkgs = {
     config.allowUnfreePredicate = pkg:
       builtins.elem (lib.getName pkg) [
-        "typora"
         "intelephense"
         "vscode"
       ];
@@ -87,13 +86,6 @@
       enable = true;
       xkb.layout = "de";
 
-      #displayManager.gdm = {
-      #  enable = true;
-      #  wayland = true;
-      #};
-
-      #desktopManager.gnome.enable = true;
-
       excludePackages = [
         pkgs.xterm
       ];
@@ -117,11 +109,6 @@
         };
       };
     };
-
-    #solaar = {
-    #  enable = true;
-    #  package = pkgs.solaar;
-    #};
 
     coredns = {
       enable = true;
@@ -157,18 +144,15 @@
   environment.systemPackages = with pkgs; [
     alacritty
     blender
-    chromium
+    brave
     devenv
     fd
     file
     foliate
-    gdm
     git
     gnome-keyring
-    inputs.zen-browser.packages.${pkgs.system}.default
     neovim
     niri
-    obs-studio
     openssl
     p7zip
     playerctl
@@ -177,41 +161,16 @@
     seahorse
     solaar
     tmux
-    typora
     typst
     unzip
     vlc
+    vscode
     wget
     wireplumber
     wl-clipboard
-    wofi
     zsh
-    vscode
-  ];
 
-  # Debloat GNOME
-  environment.gnome.excludePackages = with pkgs; [
-    epiphany
-    gnome-console
-    gnome-photos
-    gnome-text-editor
-    gnome-tour
-    gnome-user-docs
-    cheese
-    evince
-    geary
-    gnome-calculator
-    gnome-calendar
-    gnome-characters
-    gnome-clocks
-    gnome-contacts
-    gnome-maps
-    gnome-music
-    gnome-terminal
-    gnome-weather
-    totem
-    yelp
-    rygel
+    inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
   programs.niri = {
