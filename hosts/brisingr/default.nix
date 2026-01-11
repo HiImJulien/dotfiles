@@ -12,6 +12,8 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../_common
+    inputs.dms.nixosModules.dankMaterialShell
+    inputs.dms.nixosModules.greeter
   ];
 
   nixpkgs = {
@@ -19,6 +21,7 @@
       builtins.elem (lib.getName pkg) [
         "typora"
         "intelephense"
+        "vscode"
       ];
   };
 
@@ -74,6 +77,8 @@
     };
   };
 
+  i18n.consoleKeyMap = "de-latin1";
+
   services = {
     blueman.enable = true;
     gnome.gnome-keyring.enable = true;
@@ -87,12 +92,12 @@
       enable = true;
       xkb.layout = "de";
 
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-      };
+      #displayManager.gdm = {
+      #  enable = true;
+      #  wayland = true;
+      #};
 
-      desktopManager.gnome.enable = true;
+      #desktopManager.gnome.enable = true;
 
       excludePackages = [
         pkgs.xterm
@@ -187,6 +192,7 @@
     wl-clipboard
     wofi
     zsh
+    vscode
   ];
 
   # Debloat GNOME
@@ -219,7 +225,33 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
-  programs.gamemode.enable = true;
+  programs.dankMaterialShell = {
+    enable = true;
+
+    systemd = {
+      enable = true;
+      restartIfChanged = true;
+    };
+
+    greeter = {
+      compositor = {
+        name = "hyprland";
+      };
+
+      logs = {
+        save = true;
+        path = "/tmp/dms-greeter.log";
+      };
+    };
+
+    enableSystemMonitoring = true;
+    enableClipboard = true;
+    enableCalendarEvents = true;
+
+    enableVPN = false;
+    enableDynamicTheming = false;
+    enableAudioWavelength = false;
+  };
 
   hardware = {
     graphics = {

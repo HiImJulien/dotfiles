@@ -20,7 +20,7 @@
           "$mod, M, exit"
           "$mod, V, togglefloating"
           # "$mod, R, exec, wofi --show drun"
-          "$mod, SPACE, exec, caelestia shell drawers toggle launcher"
+          # "$mod, SPACE, exec, caelestia shell drawers toggle launcher"
 
           # Focus binds
           "$mod, H, movefocus, l"

@@ -4,8 +4,8 @@
   inputs = {
     catppuccin.url = "github:catppuccin/nix/v25.05";
 
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
@@ -18,6 +18,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
 
     hyprland.url = "github:hyprwm/hyprland";
     hyprpaper.url = "github:hyprwm/hyprpaper";
