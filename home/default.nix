@@ -37,10 +37,11 @@ in {
     ./alacritty
     ./direnv
     ./git
-    ./gtk
+    # ./gtk
     ./niri
     ./nvim
     ./tmux
+    ./wezterm
     ./zsh
   ];
 
@@ -52,6 +53,7 @@ in {
     alacritty.enable = true;
     cursors.enable = true;
     hyprland.enable = true;
+    wezterm.enable = true;
   };
 
   xdg.enable = true;

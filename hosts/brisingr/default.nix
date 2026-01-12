@@ -74,7 +74,6 @@
   i18n.consoleKeyMap = "de-latin1";
 
   services = {
-    blueman.enable = true;
     gnome.gnome-keyring.enable = true;
 
     pulseaudio = {
@@ -90,6 +89,8 @@
         pkgs.xterm
       ];
     };
+
+    gnome.gcr-ssh-agent.enable = false;
 
     pipewire = {
       enable = true;
@@ -186,14 +187,8 @@
     };
 
     greeter = {
-      compositor = {
-        name = "niri";
-      };
-
-      logs = {
-        save = true;
-        path = "/tmp/dms-greeter.log";
-      };
+      enable = true;
+      compositor.name = "niri";
     };
 
     enableSystemMonitoring = true;
@@ -228,6 +223,7 @@
       enable = true;
       flavor = "mocha";
     };
+
   };
 
   system.stateVersion = "24.11";
